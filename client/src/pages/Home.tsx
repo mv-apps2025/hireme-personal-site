@@ -1,16 +1,17 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download, MessageCircle, CheckCircle2, Mail, Phone, Linkedin, MapPin, Wrench, Coffee, Calendar, Eye, Zap, Factory, DollarSign, Clock, Target, Rocket, XCircle, Award, Shield, Users, FileText, AlertTriangle, Palette, Cpu, Briefcase, Building2, Lightbulb, PenTool, Box, Layers, Image, MonitorPlay } from "lucide-react";
+import { ArrowRight, Download, MessageCircle, CheckCircle2, Mail, Phone, Linkedin, MapPin, Wrench, Coffee, Eye, Zap, Factory, DollarSign, Clock, Target, Rocket, XCircle, Users, FileText, Palette, Cpu, Briefcase, Building2, Lightbulb, PenTool, Box, Layers, Image, MonitorPlay, Package, FileCheck, Presentation, Globe, Cog, Search, BarChart3, Sparkles, Printer, FileBox, Truck, ShoppingBag } from "lucide-react";
 import { useState } from "react";
 
 /**
- * VISITOR-FOCUSED STRUCTURE:
- * Lead with THEIR problems and opportunities
- * Position Martin as the solution
- * Less "about me" → more "about what you need"
+ * IMPROVED VERSION:
+ * - Employment + Contract positioning (not subscription)
+ * - Full scope of capabilities from Design Conquest
+ * - Visitor-focused (their problems, their opportunities)
+ * - Less resume-focused, more capability-focused
  */
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<'design' | 'visualization' | 'manufacturing'>('design');
+  const [activeCapability, setActiveCapability] = useState<'research' | 'design' | 'visualization' | 'production' | 'launch'>('design');
 
   return (
     <div className="min-h-screen bg-slate-950 text-white antialiased">
@@ -27,8 +28,8 @@ export default function Home() {
             </div>
           </a>
           <div className="hidden md:flex items-center gap-8">
-            <a href="#problem" className="text-sm text-slate-400 hover:text-white transition-colors">The Challenge</a>
-            <a href="#solution" className="text-sm text-slate-400 hover:text-white transition-colors">The Solution</a>
+            <a href="#challenges" className="text-sm text-slate-400 hover:text-white transition-colors">Challenges</a>
+            <a href="#capabilities" className="text-sm text-slate-400 hover:text-white transition-colors">Capabilities</a>
             <a href="#results" className="text-sm text-slate-400 hover:text-white transition-colors">Results</a>
             <a href="#work-together" className="text-sm text-slate-400 hover:text-white transition-colors">Work Together</a>
             <a href="#contact" className="text-sm text-slate-400 hover:text-white transition-colors">Contact</a>
@@ -39,285 +40,409 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* ==================== HERO: Their Opportunity ==================== */}
+      {/* ==================== HERO ==================== */}
       <section className="pt-28 sm:pt-36 pb-20 px-4">
         <div className="container max-w-4xl">
           {/* Status Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full mb-8">
             <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
-            <span className="text-emerald-400 text-xs font-semibold uppercase tracking-wide">Available Now</span>
+            <span className="text-emerald-400 text-xs font-semibold uppercase tracking-wide">Available for Opportunities</span>
           </div>
 
-          {/* Hero - Visitor focused */}
+          {/* Hero - Visitor focused, broader scope */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight mb-6">
-            Your product vision deserves
+            Take your product from
             <br />
-            <span className="text-amber-400">to actually get built.</span>
+            <span className="text-amber-400">idea to market.</span>
           </h1>
           
-          <p className="text-lg sm:text-xl text-slate-400 leading-relaxed max-w-2xl mb-10">
-            You have a compelling concept. Maybe a prototype. But somewhere between "great idea" and "shipping product," things get stuck. Design and manufacturing don't talk to each other. Timelines slip. Costs balloon. Investors ask questions you can't answer.
+          <p className="text-lg sm:text-xl text-slate-400 leading-relaxed max-w-2xl mb-8">
+            Whether you're launching something new, improving an existing product, or need to visualize a concept that wins investors—I help you move from where you are to where you need to be.
           </p>
 
           <p className="text-lg text-slate-300 mb-10 max-w-2xl">
-            <strong className="text-white">It doesn't have to be this hard.</strong>
+            <strong className="text-white">Research → Design → Visualization → Production → Launch.</strong> One person who can do it all, or plug into your team wherever you need help.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 mb-12">
             <Button className="bg-amber-500 hover:bg-amber-600 text-slate-950 px-6 h-12 text-sm font-bold gap-2">
               <MessageCircle className="w-4 h-4" />
-              Let's Fix This Together
+              Let's Talk
               <ArrowRight className="w-4 h-4" />
             </Button>
             <Button variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800 px-5 h-12 text-sm font-semibold gap-2">
-              <Eye className="w-4 h-4" />
-              See How It Works
+              <Download className="w-4 h-4" />
+              Download Resume
             </Button>
+          </div>
+
+          {/* Quick proof - less resume-y, more capability-focused */}
+          <div className="flex flex-wrap gap-6 text-sm text-slate-500">
+            <span className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+              12+ years product development
+            </span>
+            <span className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+              500+ products delivered
+            </span>
+            <span className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+              Concept to manufacturing
+            </span>
           </div>
         </div>
       </section>
 
-      {/* ==================== THE PROBLEM: Their Pain ==================== */}
-      <section id="problem" className="py-20 px-4 bg-slate-900/50">
+      {/* ==================== CHALLENGES THEY FACE ==================== */}
+      <section id="challenges" className="py-20 px-4 bg-slate-900/50">
         <div className="container max-w-5xl">
-          <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-4">Sound Familiar?</p>
+          <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-4">Common Challenges</p>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            The gap between "great concept" and "shipped product" is where most hardware companies get stuck.
+            Product development is hard. Here's where teams usually get stuck.
           </h2>
-          <p className="text-slate-400 text-lg mb-12 max-w-3xl">
-            You've probably experienced at least one of these:
-          </p>
 
-          <div className="grid sm:grid-cols-2 gap-6 mb-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             <div className="p-6 bg-slate-800/50 border border-slate-700/50 rounded-xl">
-              <XCircle className="w-6 h-6 text-red-400 mb-4" />
-              <h3 className="text-lg font-bold text-white mb-2">"The design looks amazing, but it costs $500/unit to make"</h3>
-              <p className="text-slate-400 text-sm">Your designer created something beautiful. Your manufacturer says it's impossible—or insanely expensive. Back to square one.</p>
+              <Lightbulb className="w-6 h-6 text-amber-400 mb-4" />
+              <h3 className="text-lg font-bold text-white mb-2">"We have an idea but don't know where to start"</h3>
+              <p className="text-slate-400 text-sm">You need someone to turn a rough concept into something concrete—research, strategy, and a clear path forward.</p>
             </div>
             <div className="p-6 bg-slate-800/50 border border-slate-700/50 rounded-xl">
-              <XCircle className="w-6 h-6 text-red-400 mb-4" />
-              <h3 className="text-lg font-bold text-white mb-2">"Engineering made it buildable, but now it looks like medical equipment"</h3>
-              <p className="text-slate-400 text-sm">The soul of your product got lost somewhere between the concept and the CAD file. It works, but nobody wants to buy it.</p>
+              <Image className="w-6 h-6 text-amber-400 mb-4" />
+              <h3 className="text-lg font-bold text-white mb-2">"We need visuals that sell"</h3>
+              <p className="text-slate-400 text-sm">Investors, customers, or stakeholders need to see it to believe it. You need renderings, animations, or pitch materials that convince.</p>
             </div>
             <div className="p-6 bg-slate-800/50 border border-slate-700/50 rounded-xl">
-              <XCircle className="w-6 h-6 text-red-400 mb-4" />
-              <h3 className="text-lg font-bold text-white mb-2">"Investors keep asking about our manufacturing strategy"</h3>
-              <p className="text-slate-400 text-sm">You have a great pitch deck. But when they dig into how you'll actually produce this thing at scale, you're not confident in your answers.</p>
+              <Factory className="w-6 h-6 text-amber-400 mb-4" />
+              <h3 className="text-lg font-bold text-white mb-2">"Design and manufacturing don't talk"</h3>
+              <p className="text-slate-400 text-sm">Beautiful concepts that can't be built. Buildable products that lost their soul. You need someone who thinks in both languages.</p>
             </div>
             <div className="p-6 bg-slate-800/50 border border-slate-700/50 rounded-xl">
-              <XCircle className="w-6 h-6 text-red-400 mb-4" />
-              <h3 className="text-lg font-bold text-white mb-2">"We've been iterating for months and still aren't production-ready"</h3>
-              <p className="text-slate-400 text-sm">Your designer and engineer keep going back and forth. Every revision creates new problems. The timeline keeps slipping.</p>
+              <Clock className="w-6 h-6 text-amber-400 mb-4" />
+              <h3 className="text-lg font-bold text-white mb-2">"We're moving too slow"</h3>
+              <p className="text-slate-400 text-sm">Revisions drag on. Timelines slip. You need faster iteration without sacrificing quality.</p>
+            </div>
+            <div className="p-6 bg-slate-800/50 border border-slate-700/50 rounded-xl">
+              <DollarSign className="w-6 h-6 text-amber-400 mb-4" />
+              <h3 className="text-lg font-bold text-white mb-2">"Our costs are out of control"</h3>
+              <p className="text-slate-400 text-sm">The design looks great but costs too much to produce. You need DFM optimization and cost engineering from the start.</p>
+            </div>
+            <div className="p-6 bg-slate-800/50 border border-slate-700/50 rounded-xl">
+              <ShoppingBag className="w-6 h-6 text-amber-400 mb-4" />
+              <h3 className="text-lg font-bold text-white mb-2">"We don't know how to launch"</h3>
+              <p className="text-slate-400 text-sm">Product's ready but you need packaging, user guides, sell sheets, or a presales website to actually go to market.</p>
             </div>
           </div>
 
           <div className="p-6 bg-slate-800/30 border border-slate-700/50 rounded-xl">
-            <p className="text-slate-300 text-lg">
-              <strong className="text-white">The root cause?</strong> Most teams have to hire separate designers, engineers, and manufacturing consultants who don't speak the same language. You end up playing translator—burning runway while everyone talks past each other.
+            <p className="text-slate-300 text-lg text-center">
+              <strong className="text-white">The common thread?</strong> You need someone who can see the whole picture—not just one piece of the puzzle.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ==================== THE SOLUTION: What They Need ==================== */}
-      <section id="solution" className="py-20 px-4">
+      {/* ==================== FULL CAPABILITIES ==================== */}
+      <section id="capabilities" className="py-20 px-4">
         <div className="container max-w-5xl">
-          <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-4">What If...</p>
+          <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-4">What I Bring to the Table</p>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            You had one person who speaks both languages fluently?
+            End-to-end product development capabilities.
           </h2>
-          <p className="text-slate-400 text-lg mb-12 max-w-3xl">
-            Someone who thinks about aesthetics AND manufacturing constraints from day one. Who can sit in a design review, an engineering meeting, and an investor pitch—and contribute meaningfully to all three.
+          <p className="text-slate-400 text-lg mb-8 max-w-3xl">
+            I can take you from initial research through market launch—or plug in wherever your team needs support.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <div className="p-6 bg-slate-800/30 border border-slate-700/50 rounded-xl">
-              <div className="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center mb-4">
-                <PenTool className="w-6 h-6 text-amber-400" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Design That Sells</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Products that look compelling to users and investors. Form language that communicates your brand. Renderings that win funding rounds.
-              </p>
-            </div>
-
-            <div className="p-6 bg-slate-800/30 border border-slate-700/50 rounded-xl">
-              <div className="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center mb-4">
-                <Image className="w-6 h-6 text-amber-400" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Visualization That Convinces</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Photorealistic renderings, VR experiences, pitch deck assets. Show investors and customers exactly what they're buying into—before you spend a dollar on tooling.
-              </p>
-            </div>
-
-            <div className="p-6 bg-slate-800/30 border border-slate-700/50 rounded-xl">
-              <div className="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center mb-4">
-                <Factory className="w-6 h-6 text-amber-400" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Manufacturing That Works</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                DFM-optimized from the first sketch. Supplier relationships. Cost targets you can actually hit. No surprises when you go to production.
-              </p>
-            </div>
+          {/* Capability Tabs */}
+          <div className="flex flex-wrap gap-2 mb-8">
+            <button
+              onClick={() => setActiveCapability('research')}
+              className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${activeCapability === 'research' ? 'bg-amber-500 text-slate-950' : 'bg-slate-800/50 text-slate-400 hover:text-white'}`}
+            >
+              Research & Strategy
+            </button>
+            <button
+              onClick={() => setActiveCapability('design')}
+              className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${activeCapability === 'design' ? 'bg-amber-500 text-slate-950' : 'bg-slate-800/50 text-slate-400 hover:text-white'}`}
+            >
+              Design & CAD
+            </button>
+            <button
+              onClick={() => setActiveCapability('visualization')}
+              className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${activeCapability === 'visualization' ? 'bg-amber-500 text-slate-950' : 'bg-slate-800/50 text-slate-400 hover:text-white'}`}
+            >
+              Visualization
+            </button>
+            <button
+              onClick={() => setActiveCapability('production')}
+              className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${activeCapability === 'production' ? 'bg-amber-500 text-slate-950' : 'bg-slate-800/50 text-slate-400 hover:text-white'}`}
+            >
+              Production
+            </button>
+            <button
+              onClick={() => setActiveCapability('launch')}
+              className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${activeCapability === 'launch' ? 'bg-amber-500 text-slate-950' : 'bg-slate-800/50 text-slate-400 hover:text-white'}`}
+            >
+              Go-to-Market
+            </button>
           </div>
 
-          {/* Skills - framed as capabilities for THEM */}
-          <div className="p-6 bg-slate-800/30 border border-slate-700/50 rounded-xl">
-            <h3 className="text-lg font-bold text-white mb-4">The toolkit I bring to your project:</h3>
-            <div className="flex flex-wrap gap-2 mb-6">
-              <button
-                onClick={() => setActiveTab('design')}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${activeTab === 'design' ? 'bg-amber-500 text-slate-950' : 'bg-slate-700/50 text-slate-400 hover:text-white'}`}
-              >
-                Design
-              </button>
-              <button
-                onClick={() => setActiveTab('visualization')}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${activeTab === 'visualization' ? 'bg-amber-500 text-slate-950' : 'bg-slate-700/50 text-slate-400 hover:text-white'}`}
-              >
-                Visualization
-              </button>
-              <button
-                onClick={() => setActiveTab('manufacturing')}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${activeTab === 'manufacturing' ? 'bg-amber-500 text-slate-950' : 'bg-slate-700/50 text-slate-400 hover:text-white'}`}
-              >
-                Manufacturing
-              </button>
-            </div>
-
-            {activeTab === 'design' && (
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="flex items-center gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  SolidWorks, Fusion 360, Rhino
+          {/* Capability Content */}
+          <div className="p-6 sm:p-8 bg-slate-800/30 border border-slate-700/50 rounded-2xl min-h-[280px]">
+            {activeCapability === 'research' && (
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-amber-500/10 rounded-lg flex items-center justify-center">
+                    <Search className="w-5 h-5 text-amber-400" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white">Research & Strategy</h3>
                 </div>
-                <div className="flex items-center gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  User-centered design methodology
-                </div>
-                <div className="flex items-center gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  Form language development
-                </div>
-                <div className="flex items-center gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  Rapid concept ideation & sketching
+                <p className="text-slate-400 mb-6">Before designing anything, understand the market, users, and competition. Build a strategy that sets you up for success.</p>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    User research & interviews
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Market analysis
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Competitor teardowns
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Product strategy & roadmapping
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Brand positioning
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Requirements definition
+                  </div>
                 </div>
               </div>
             )}
 
-            {activeTab === 'visualization' && (
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="flex items-center gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  KeyShot photorealistic rendering
+            {activeCapability === 'design' && (
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-amber-500/10 rounded-lg flex items-center justify-center">
+                    <PenTool className="w-5 h-5 text-amber-400" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white">Design & CAD</h3>
                 </div>
-                <div className="flex items-center gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  VR design (Gravity Sketch)
-                </div>
-                <div className="flex items-center gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  AI-accelerated workflows (Midjourney, VizCom)
-                </div>
-                <div className="flex items-center gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  Adobe Creative Suite
+                <p className="text-slate-400 mb-6">From initial sketches to production-ready CAD. Industrial design that's both beautiful and buildable.</p>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Concept ideation & sketching
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    3D CAD modeling (SolidWorks, Fusion, Rhino)
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Form development & refinement
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Color, material, finish (CMF)
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    User-centered design
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Design for manufacturing (DFM)
+                  </div>
                 </div>
               </div>
             )}
 
-            {activeTab === 'manufacturing' && (
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="flex items-center gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  DFM/DFA optimization
+            {activeCapability === 'visualization' && (
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-amber-500/10 rounded-lg flex items-center justify-center">
+                    <Sparkles className="w-5 h-5 text-amber-400" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white">Visualization</h3>
                 </div>
-                <div className="flex items-center gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  Sheet metal, injection molding, CNC
-                </div>
-                <div className="flex items-center gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  Rapid prototyping & 3D printing
-                </div>
-                <div className="flex items-center gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  Cost optimization & supplier vetting
+                <p className="text-slate-400 mb-6">Show investors, customers, and stakeholders exactly what they're buying into—before you spend a dollar on tooling.</p>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Photorealistic product renders (KeyShot)
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    CGI animations & turntables
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    VR/AR experiences (Gravity Sketch)
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Digital twins
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    AI-accelerated workflows (Midjourney, VizCom)
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Pitch deck visuals
+                  </div>
                 </div>
               </div>
             )}
+
+            {activeCapability === 'production' && (
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-amber-500/10 rounded-lg flex items-center justify-center">
+                    <Factory className="w-5 h-5 text-amber-400" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white">Production</h3>
+                </div>
+                <p className="text-slate-400 mb-6">Get from CAD to factory floor. Documentation, prototyping, and manufacturing support that actually works.</p>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Dimensioned drawings
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Assembly documentation
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Bill of materials (BOM)
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    3D printing & rapid prototyping
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Functional prototypes
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Manufacturing liaison & supplier vetting
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeCapability === 'launch' && (
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-amber-500/10 rounded-lg flex items-center justify-center">
+                    <Rocket className="w-5 h-5 text-amber-400" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white">Go-to-Market</h3>
+                </div>
+                <p className="text-slate-400 mb-6">Product's ready—now sell it. Everything you need to launch, from packaging to presales.</p>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Packaging design
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    User guides & documentation
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Licensing sell sheets
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Presales landing pages
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Merchandise design
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    Go-to-market strategy
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* The differentiator */}
+          <div className="mt-8 p-6 bg-amber-500/5 border border-amber-500/20 rounded-xl">
+            <p className="text-slate-300 text-lg text-center">
+              <strong className="text-amber-400">The difference:</strong> Most teams hire separate researchers, designers, CAD engineers, visualization specialists, and manufacturing consultants. I can do all of it—or work alongside your existing team wherever you need the help.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* ==================== RESULTS: Proof It Works ==================== */}
+      {/* ==================== RESULTS ==================== */}
       <section id="results" className="py-20 px-4 bg-slate-900/50">
         <div className="container max-w-5xl">
-          <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-4">This Approach Works</p>
+          <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-4">Track Record</p>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Here's what happens when design and manufacturing work together from day one.
+            This approach delivers results.
           </h2>
 
-          <div className="space-y-8">
-            {/* BANQloop - framed as their success */}
-            <div className="p-6 sm:p-8 bg-slate-800/30 border border-slate-700/50 rounded-2xl">
-              <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
-                <div>
-                  <p className="text-slate-500 text-sm mb-1">Hardware Startup → Seed Funding</p>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white">BANQloop raised ~$4M because investors believed they could actually build it</h3>
-                </div>
-                <div className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 rounded-full">
-                  <span className="text-emerald-400 text-xs font-semibold uppercase">~$4M Raised</span>
-                </div>
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {/* BANQloop */}
+            <div className="p-6 bg-slate-800/30 border border-slate-700/50 rounded-2xl">
+              <div className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 rounded-full inline-block mb-4">
+                <span className="text-emerald-400 text-xs font-semibold uppercase">~$4M Raised</span>
               </div>
-              <p className="text-slate-400 mb-4">
-                They had a compelling vision for AI-powered recycling kiosks. But investors needed proof it could actually be manufactured at scale. I created production-optimized designs with photorealistic renderings that proved technical feasibility. The design work became central to their pitch deck.
+              <h3 className="text-lg font-bold text-white mb-2">BANQloop</h3>
+              <p className="text-slate-400 text-sm mb-4">
+                AI recycling kiosks. Took rough concept to investor-ready product—design, visualization, and manufacturing strategy that proved technical feasibility.
               </p>
-              <p className="text-amber-400 text-sm font-semibold">
-                Result: Concept to investor-ready in 6 weeks. Seed round funded.
-              </p>
+              <p className="text-amber-400 text-sm font-semibold">Concept → Funded in 6 weeks</p>
             </div>
 
-            {/* Design Conquest - framed as client success */}
-            <div className="p-6 sm:p-8 bg-slate-800/30 border border-slate-700/50 rounded-2xl">
-              <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
-                <div>
-                  <p className="text-slate-500 text-sm mb-1">DTCs & OEMs → Production-Ready Outputs</p>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white">500+ products shipped through Design Conquest</h3>
-                </div>
-                <div className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 rounded-full">
-                  <span className="text-emerald-400 text-xs font-semibold uppercase">500+ Deliverables</span>
-                </div>
+            {/* Design Conquest */}
+            <div className="p-6 bg-slate-800/30 border border-slate-700/50 rounded-2xl">
+              <div className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 rounded-full inline-block mb-4">
+                <span className="text-emerald-400 text-xs font-semibold uppercase">500+ Deliverables</span>
               </div>
-              <p className="text-slate-400 mb-4">
-                Brands and manufacturers needed rapid design iteration with outputs their factories could actually use. I built a design-to-manufacturing service that delivers production-ready files—not just pretty pictures.
+              <h3 className="text-lg font-bold text-white mb-2">Design Conquest</h3>
+              <p className="text-slate-400 text-sm mb-4">
+                Built a design-to-manufacturing service for DTCs and OEMs. Research, design, visualization, production docs—the full pipeline.
               </p>
-              <p className="text-amber-400 text-sm font-semibold">
-                Result: Speed and manufacturing accuracy as competitive advantages.
-              </p>
+              <p className="text-amber-400 text-sm font-semibold">Avg 72-hour turnaround</p>
             </div>
 
-            {/* Velocity Sprints - framed as founder success */}
-            <div className="p-6 sm:p-8 bg-slate-800/30 border border-slate-700/50 rounded-2xl">
-              <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
-                <div>
-                  <p className="text-slate-500 text-sm mb-1">Early-Stage Founders → Buildable Products</p>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white">3-6 month timelines compressed into 1-2 weeks</h3>
-                </div>
-                <div className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 rounded-full">
-                  <span className="text-emerald-400 text-xs font-semibold uppercase">10x Faster</span>
-                </div>
+            {/* Velocity Sprints */}
+            <div className="p-6 bg-slate-800/30 border border-slate-700/50 rounded-2xl">
+              <div className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 rounded-full inline-block mb-4">
+                <span className="text-emerald-400 text-xs font-semibold uppercase">10x Faster</span>
               </div>
-              <p className="text-slate-400 mb-4">
-                Founders stuck between "I have an idea" and "I have something I can show investors." AI-accelerated workflows combined with manufacturing knowledge let me compress what typically takes months into focused sprints.
+              <h3 className="text-lg font-bold text-white mb-2">Startup Sprints</h3>
+              <p className="text-slate-400 text-sm mb-4">
+                Rapid 0→1 product development for early-stage founders. AI-accelerated workflows compress months into weeks.
               </p>
-              <p className="text-amber-400 text-sm font-semibold">
-                Result: From napkin sketch to investor-ready in days, not months.
-              </p>
+              <p className="text-amber-400 text-sm font-semibold">3-6 months → 1-2 weeks</p>
             </div>
+          </div>
+
+          {/* Testimonial */}
+          <div className="p-6 sm:p-8 bg-slate-800/30 border border-slate-700/50 rounded-2xl">
+            <p className="text-slate-300 text-lg italic mb-4">
+              "Martin delivered product designs for us that have clear advantages over anything on the market."
+            </p>
+            <p className="text-slate-500 text-sm">— Design Conquest Client</p>
           </div>
         </div>
       </section>
@@ -325,64 +450,37 @@ export default function Home() {
       {/* ==================== HOW TO WORK TOGETHER ==================== */}
       <section id="work-together" className="py-20 px-4">
         <div className="container max-w-5xl">
-          <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-4">How We Can Work Together</p>
+          <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-4">Work Together</p>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Whatever stage you're at, there's a way to move forward.
+            Two ways to engage.
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6 mb-12">
-            {/* Project-Based */}
-            <div className="p-6 sm:p-8 bg-slate-800/30 border border-slate-700/50 rounded-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-500/10 border border-amber-500/30 rounded-full mb-4">
-                <span className="text-amber-400 text-xs font-semibold uppercase">Project-Based</span>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-4">You have a specific challenge to solve</h3>
-              <ul className="space-y-3 mb-6">
-                <li className="flex gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                  <span><strong>Concept Sprint (1-2 weeks):</strong> Rough idea → investor-grade renderings + manufacturing strategy</span>
-                </li>
-                <li className="flex gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                  <span><strong>Design-to-Factory (4-8 weeks):</strong> Full CAD through supplier-ready documentation</span>
-                </li>
-                <li className="flex gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                  <span><strong>DFM Optimization:</strong> Reduce production costs 20-40% on existing designs</span>
-                </li>
-                <li className="flex gap-3 text-sm text-slate-300">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                  <span><strong>Investor Visualization:</strong> Photorealistic renderings for pitch decks</span>
-                </li>
-              </ul>
-              <Button variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800 h-10 px-4 text-sm gap-2 w-full">
-                <Rocket className="w-4 h-4" />
-                Discuss Your Project
-              </Button>
-            </div>
-
             {/* Full-Time */}
             <div className="p-6 sm:p-8 bg-slate-800/30 border border-slate-700/50 rounded-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-500/10 border border-amber-500/30 rounded-full mb-4">
                 <span className="text-amber-400 text-xs font-semibold uppercase">Full-Time / Embedded</span>
               </div>
-              <h3 className="text-xl font-bold text-white mb-4">You need ongoing design + manufacturing leadership</h3>
+              <h3 className="text-xl font-bold text-white mb-4">Join your team</h3>
+              <p className="text-slate-400 text-sm mb-6">
+                Looking for the right fit—a team building products that matter, where design thinking and manufacturing reality both have a seat at the table.
+              </p>
               <ul className="space-y-3 mb-6">
                 <li className="flex gap-3 text-sm text-slate-300">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                  <span><strong>Day 1 contribution:</strong> Manufacturing-optimized design thinking across your pipeline</span>
+                  <span>Day 1 contribution across the product pipeline</span>
                 </li>
                 <li className="flex gap-3 text-sm text-slate-300">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                  <span><strong>Risk reduction:</strong> Catch costly mistakes before tooling investment</span>
+                  <span>Bridge between design, engineering, and business</span>
                 </li>
                 <li className="flex gap-3 text-sm text-slate-300">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                  <span><strong>Speed:</strong> AI-accelerated workflows (10-15 directions in a day)</span>
+                  <span>AI-accelerated workflows (10-15 directions/day)</span>
                 </li>
                 <li className="flex gap-3 text-sm text-slate-300">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                  <span><strong>Communication:</strong> Bridge between design, engineering, ops, and investors</span>
+                  <span>Catch costly manufacturing mistakes early</span>
                 </li>
               </ul>
               <Button variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800 h-10 px-4 text-sm gap-2 w-full">
@@ -390,21 +488,38 @@ export default function Home() {
                 Let's Talk About Fit
               </Button>
             </div>
-          </div>
 
-          {/* Quick Proof Points */}
-          <div className="flex flex-wrap justify-center gap-8 p-6 bg-slate-800/20 rounded-xl">
-            <div className="text-center">
-              <p className="text-2xl font-bold text-white">Virginia Tech</p>
-              <p className="text-slate-500 text-sm">Industrial Design, Cum Laude</p>
-            </div>
-            <div className="text-center">
-              <p className="text-2xl font-bold text-white">~$4M</p>
-              <p className="text-slate-500 text-sm">Helped raise at BANQloop</p>
-            </div>
-            <div className="text-center">
-              <p className="text-2xl font-bold text-white">500+</p>
-              <p className="text-slate-500 text-sm">Production deliverables</p>
+            {/* Contract */}
+            <div className="p-6 sm:p-8 bg-slate-800/30 border border-slate-700/50 rounded-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-500/10 border border-amber-500/30 rounded-full mb-4">
+                <span className="text-amber-400 text-xs font-semibold uppercase">Contract / Project</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-4">Solve a specific challenge</h3>
+              <p className="text-slate-400 text-sm mb-6">
+                Have a project that needs expertise? I can plug in wherever you need help—from quick concept sprints to full product development.
+              </p>
+              <ul className="space-y-3 mb-6">
+                <li className="flex gap-3 text-sm text-slate-300">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                  <span><strong>Concept Sprint:</strong> Idea → renderings + strategy (1-2 weeks)</span>
+                </li>
+                <li className="flex gap-3 text-sm text-slate-300">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                  <span><strong>Design-to-Factory:</strong> Full CAD through production docs</span>
+                </li>
+                <li className="flex gap-3 text-sm text-slate-300">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                  <span><strong>Visualization:</strong> Renderings, animations, pitch materials</span>
+                </li>
+                <li className="flex gap-3 text-sm text-slate-300">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                  <span><strong>Launch Support:</strong> Packaging, guides, presales pages</span>
+                </li>
+              </ul>
+              <Button variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800 h-10 px-4 text-sm gap-2 w-full">
+                <Rocket className="w-4 h-4" />
+                Discuss Your Project
+              </Button>
             </div>
           </div>
         </div>
@@ -413,18 +528,21 @@ export default function Home() {
       {/* ==================== TAMPA BAY ==================== */}
       <section className="py-20 px-4 bg-slate-900/50">
         <div className="container max-w-5xl">
-          <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-4">Tampa Bay</p>
+          <div className="flex items-center gap-2 mb-4">
+            <MapPin className="w-5 h-5 text-amber-400" />
+            <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider">Tampa Bay</p>
+          </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            New to the area. Looking to contribute.
+            New to the area. Looking to connect.
           </h2>
           <p className="text-slate-400 text-lg mb-8 max-w-3xl">
-            Just moved to Tampa Bay and genuinely impressed by the innovation ecosystem—spARK Labs, Tampa Bay Wave, SPID. I'm actively seeking full-time roles, contract relationships, and ways to be useful to the community.
+            Just moved to Tampa Bay. Impressed by the innovation ecosystem—spARK Labs, Tampa Bay Wave, St. Pete Innovation District. Actively seeking full-time roles, contract work, and ways to contribute to the community.
           </p>
 
           <div className="p-6 sm:p-8 bg-amber-500/10 border border-amber-500/30 rounded-2xl">
-            <h3 className="text-xl font-bold text-white mb-3">Free Strategy Session for Tampa Bay Startups</h3>
+            <h3 className="text-xl font-bold text-white mb-3">Free strategy session for Tampa Bay startups</h3>
             <p className="text-slate-300 mb-6">
-              If you're affiliated with spARK Labs, Tampa Bay Wave, or SPID, let's grab coffee and talk through your product challenges. No pitch, no strings—just trying to be helpful and meet interesting people building physical products.
+              If you're affiliated with a local accelerator or innovation hub, let's grab coffee and talk through your product challenges. No pitch, no strings—just trying to be helpful.
             </p>
             <Button className="bg-amber-500 hover:bg-amber-600 text-slate-950 px-6 h-12 text-sm font-bold gap-2">
               <Coffee className="w-4 h-4" />
@@ -442,7 +560,7 @@ export default function Home() {
               Let's figure out if I can help.
             </h2>
             <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-              Whether you're hiring, have a project, or just want to talk about interesting physical products—I'm happy to chat.
+              Whether you're hiring, have a project, or just want to talk about product development—I'm happy to chat.
             </p>
           </div>
 
@@ -480,8 +598,8 @@ export default function Home() {
                 Download Resume
               </Button>
               <Button variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800 h-12 px-6 text-sm gap-2 w-full">
-                <FileText className="w-4 h-4" />
-                View Case Studies
+                <Globe className="w-4 h-4" />
+                View Design Conquest
               </Button>
             </div>
           </div>
