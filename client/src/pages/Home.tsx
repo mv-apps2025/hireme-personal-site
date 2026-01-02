@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download, MessageCircle, CheckCircle2, Mail, Phone, Linkedin, MapPin, Wrench, Coffee, Eye, Zap, Factory, DollarSign, Clock, Target, Rocket, XCircle, Users, FileText, Palette, Cpu, Briefcase, Building2, Lightbulb, PenTool, Box, Layers, Image, MonitorPlay, Package, FileCheck, Presentation, Globe, Cog, Search, BarChart3, Sparkles, Printer, FileBox, Truck, ShoppingBag } from "lucide-react";
+import { ArrowRight, Download, MessageCircle, CheckCircle2, Mail, Phone, Linkedin, MapPin, Wrench, Coffee, Zap, Factory, DollarSign, Clock, Lightbulb, PenTool, Sparkles, Rocket, Users, Search, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 /**
@@ -8,10 +8,22 @@ import { useState } from "react";
  * - Full scope of capabilities from Design Conquest
  * - Visitor-focused (their problems, their opportunities)
  * - Less resume-focused, more capability-focused
+ * - Working CTAs, smooth scroll, mobile menu
  */
 
 export default function Home() {
   const [activeCapability, setActiveCapability] = useState<'research' | 'design' | 'visualization' | 'production' | 'launch'>('design');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Smooth scroll handler
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    setMobileMenuOpen(false);
+  };
 
   return (
     <div className="min-h-screen bg-slate-950 text-white antialiased">
@@ -27,17 +39,49 @@ export default function Home() {
               <span className="text-slate-500 text-xs leading-tight">Product Designer</span>
             </div>
           </a>
+          
+          {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#challenges" className="text-sm text-slate-400 hover:text-white transition-colors">Challenges</a>
-            <a href="#capabilities" className="text-sm text-slate-400 hover:text-white transition-colors">Capabilities</a>
-            <a href="#results" className="text-sm text-slate-400 hover:text-white transition-colors">Results</a>
-            <a href="#work-together" className="text-sm text-slate-400 hover:text-white transition-colors">Work Together</a>
-            <a href="#contact" className="text-sm text-slate-400 hover:text-white transition-colors">Contact</a>
+            <a href="#challenges" onClick={(e) => scrollToSection(e, 'challenges')} className="text-sm text-slate-400 hover:text-white transition-colors">Challenges</a>
+            <a href="#capabilities" onClick={(e) => scrollToSection(e, 'capabilities')} className="text-sm text-slate-400 hover:text-white transition-colors">Capabilities</a>
+            <a href="#results" onClick={(e) => scrollToSection(e, 'results')} className="text-sm text-slate-400 hover:text-white transition-colors">Results</a>
+            <a href="#work-together" onClick={(e) => scrollToSection(e, 'work-together')} className="text-sm text-slate-400 hover:text-white transition-colors">Work Together</a>
+            <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="text-sm text-slate-400 hover:text-white transition-colors">Contact</a>
           </div>
-          <Button className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-semibold text-sm h-9 px-4">
-            Let's Talk
-          </Button>
+
+          {/* Desktop CTA */}
+          <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="hidden md:block">
+            <Button className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-semibold text-sm h-9 px-4">
+              Let's Talk
+            </Button>
+          </a>
+
+          {/* Mobile Menu Button */}
+          <button 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 text-slate-400 hover:text-white transition-colors"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-slate-950 border-t border-slate-800/50 py-4 px-4">
+            <div className="flex flex-col gap-4">
+              <a href="#challenges" onClick={(e) => scrollToSection(e, 'challenges')} className="text-sm text-slate-400 hover:text-white transition-colors py-2">Challenges</a>
+              <a href="#capabilities" onClick={(e) => scrollToSection(e, 'capabilities')} className="text-sm text-slate-400 hover:text-white transition-colors py-2">Capabilities</a>
+              <a href="#results" onClick={(e) => scrollToSection(e, 'results')} className="text-sm text-slate-400 hover:text-white transition-colors py-2">Results</a>
+              <a href="#work-together" onClick={(e) => scrollToSection(e, 'work-together')} className="text-sm text-slate-400 hover:text-white transition-colors py-2">Work Together</a>
+              <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="text-sm text-slate-400 hover:text-white transition-colors py-2">Contact</a>
+              <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>
+                <Button className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-semibold text-sm h-10 w-full mt-2">
+                  Let's Talk
+                </Button>
+              </a>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* ==================== HERO ==================== */}
@@ -66,15 +110,19 @@ export default function Home() {
 
           {/* CTAs */}
           <div className="flex flex-wrap gap-4 mb-12">
-            <Button className="bg-amber-500 hover:bg-amber-600 text-slate-950 px-6 h-12 text-sm font-bold gap-2">
-              <MessageCircle className="w-4 h-4" />
-              Let's Talk
-              <ArrowRight className="w-4 h-4" />
-            </Button>
-            <Button variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800 px-5 h-12 text-sm font-semibold gap-2">
-              <Download className="w-4 h-4" />
-              Download Resume
-            </Button>
+            <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>
+              <Button className="bg-amber-500 hover:bg-amber-600 text-slate-950 px-6 h-12 text-sm font-bold gap-2">
+                <MessageCircle className="w-4 h-4" />
+                Let's Talk
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </a>
+            <a href="/Martin-Veldsman-Resume.pdf" download>
+              <Button variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800 px-5 h-12 text-sm font-semibold gap-2">
+                <Download className="w-4 h-4" />
+                Download Resume
+              </Button>
+            </a>
           </div>
 
           {/* Quick proof - less resume-y, more capability-focused */}
@@ -96,7 +144,7 @@ export default function Home() {
       </section>
 
       {/* ==================== CHALLENGES THEY FACE ==================== */}
-      <section id="challenges" className="py-20 px-4 bg-slate-900/50">
+      <section id="challenges" className="py-20 px-4 bg-slate-900/50 scroll-mt-20">
         <div className="container max-w-5xl">
           <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-4">Common Challenges</p>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
@@ -110,7 +158,7 @@ export default function Home() {
               <p className="text-slate-400 text-sm">You need someone to turn a rough concept into something concrete—research, strategy, and a clear path forward.</p>
             </div>
             <div className="p-6 bg-slate-800/50 border border-slate-700/50 rounded-xl">
-              <Image className="w-6 h-6 text-amber-400 mb-4" />
+              <Sparkles className="w-6 h-6 text-amber-400 mb-4" />
               <h3 className="text-lg font-bold text-white mb-2">"We need visuals that sell"</h3>
               <p className="text-slate-400 text-sm">Investors, customers, or stakeholders need to see it to believe it. You need renderings, animations, or pitch materials that convince.</p>
             </div>
@@ -130,7 +178,7 @@ export default function Home() {
               <p className="text-slate-400 text-sm">The design looks great but costs too much to produce. You need DFM optimization and cost engineering from the start.</p>
             </div>
             <div className="p-6 bg-slate-800/50 border border-slate-700/50 rounded-xl">
-              <ShoppingBag className="w-6 h-6 text-amber-400 mb-4" />
+              <Zap className="w-6 h-6 text-amber-400 mb-4" />
               <h3 className="text-lg font-bold text-white mb-2">"We don't know how to launch"</h3>
               <p className="text-slate-400 text-sm">Product's ready but you need packaging, user guides, sell sheets, or a presales website to actually go to market.</p>
             </div>
@@ -145,7 +193,7 @@ export default function Home() {
       </section>
 
       {/* ==================== FULL CAPABILITIES ==================== */}
-      <section id="capabilities" className="py-20 px-4">
+      <section id="capabilities" className="py-20 px-4 scroll-mt-20">
         <div className="container max-w-5xl">
           <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-4">What I Bring to the Table</p>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
@@ -392,7 +440,7 @@ export default function Home() {
       </section>
 
       {/* ==================== RESULTS ==================== */}
-      <section id="results" className="py-20 px-4 bg-slate-900/50">
+      <section id="results" className="py-20 px-4 bg-slate-900/50 scroll-mt-20">
         <div className="container max-w-5xl">
           <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-4">Track Record</p>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
@@ -448,7 +496,7 @@ export default function Home() {
       </section>
 
       {/* ==================== HOW TO WORK TOGETHER ==================== */}
-      <section id="work-together" className="py-20 px-4">
+      <section id="work-together" className="py-20 px-4 scroll-mt-20">
         <div className="container max-w-5xl">
           <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-4">Work Together</p>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
@@ -483,10 +531,12 @@ export default function Home() {
                   <span>Catch costly manufacturing mistakes early</span>
                 </li>
               </ul>
-              <Button variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800 h-10 px-4 text-sm gap-2 w-full">
-                <Users className="w-4 h-4" />
-                Let's Talk About Fit
-              </Button>
+              <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>
+                <Button variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800 h-10 px-4 text-sm gap-2 w-full">
+                  <Users className="w-4 h-4" />
+                  Let's Talk About Fit
+                </Button>
+              </a>
             </div>
 
             {/* Contract */}
@@ -516,10 +566,12 @@ export default function Home() {
                   <span><strong>Launch Support:</strong> Packaging, guides, presales pages</span>
                 </li>
               </ul>
-              <Button variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800 h-10 px-4 text-sm gap-2 w-full">
-                <Rocket className="w-4 h-4" />
-                Discuss Your Project
-              </Button>
+              <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>
+                <Button variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800 h-10 px-4 text-sm gap-2 w-full">
+                  <Rocket className="w-4 h-4" />
+                  Discuss Your Project
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -544,16 +596,18 @@ export default function Home() {
             <p className="text-slate-300 mb-6">
               If you're affiliated with a local accelerator or innovation hub, let's grab coffee and talk through your product challenges. No pitch, no strings—just trying to be helpful.
             </p>
-            <Button className="bg-amber-500 hover:bg-amber-600 text-slate-950 px-6 h-12 text-sm font-bold gap-2">
-              <Coffee className="w-4 h-4" />
-              Schedule a Coffee Chat
-            </Button>
+            <a href="mailto:martin@designconquest.com?subject=Coffee%20Chat%20-%20Tampa%20Bay%20Startup">
+              <Button className="bg-amber-500 hover:bg-amber-600 text-slate-950 px-6 h-12 text-sm font-bold gap-2">
+                <Coffee className="w-4 h-4" />
+                Schedule a Coffee Chat
+              </Button>
+            </a>
           </div>
         </div>
       </section>
 
       {/* ==================== CONTACT ==================== */}
-      <section id="contact" className="py-20 px-4">
+      <section id="contact" className="py-20 px-4 scroll-mt-20">
         <div className="container max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -577,7 +631,7 @@ export default function Home() {
                   <Phone className="w-4 h-4" />
                   (540) 819-2005
                 </a>
-                <a href="https://linkedin.com/in/martinveldsman" className="flex items-center gap-3 text-slate-300 hover:text-amber-400 text-sm transition-colors">
+                <a href="https://linkedin.com/in/martinveldsman" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-slate-300 hover:text-amber-400 text-sm transition-colors">
                   <Linkedin className="w-4 h-4" />
                   LinkedIn
                 </a>
@@ -588,19 +642,25 @@ export default function Home() {
               </div>
             </div>
             <div className="flex flex-col gap-4">
-              <Button className="bg-amber-500 hover:bg-amber-600 text-slate-950 h-12 px-6 text-sm font-bold gap-2 w-full">
-                <MessageCircle className="w-4 h-4" />
-                Let's Talk
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-              <Button variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800 h-12 px-6 text-sm gap-2 w-full">
-                <Download className="w-4 h-4" />
-                Download Resume
-              </Button>
-              <Button variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800 h-12 px-6 text-sm gap-2 w-full">
-                <Globe className="w-4 h-4" />
-                View Design Conquest
-              </Button>
+              <a href="mailto:martin@designconquest.com?subject=Let's%20Talk%20-%20Product%20Development">
+                <Button className="bg-amber-500 hover:bg-amber-600 text-slate-950 h-12 px-6 text-sm font-bold gap-2 w-full">
+                  <MessageCircle className="w-4 h-4" />
+                  Let's Talk
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </a>
+              <a href="/Martin-Veldsman-Resume.pdf" download>
+                <Button variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800 h-12 px-6 text-sm gap-2 w-full">
+                  <Download className="w-4 h-4" />
+                  Download Resume
+                </Button>
+              </a>
+              <a href="https://designconquest.webflow.io" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800 h-12 px-6 text-sm gap-2 w-full">
+                  <Zap className="w-4 h-4" />
+                  View Design Conquest
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -622,7 +682,7 @@ export default function Home() {
           <div className="flex flex-wrap items-center justify-between gap-6">
             <p className="text-slate-600 text-sm">© 2025 Martin Veldsman</p>
             <div className="flex items-center gap-4">
-              <a href="https://linkedin.com/in/martinveldsman" className="text-slate-500 hover:text-amber-400 transition-colors">
+              <a href="https://linkedin.com/in/martinveldsman" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-amber-400 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
               <a href="mailto:martin@designconquest.com" className="text-slate-500 hover:text-amber-400 transition-colors">
