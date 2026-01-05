@@ -122,6 +122,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    font-size: 16px;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
@@ -139,6 +140,9 @@
   }
 }
 
+/* ============================================
+   CONTAINER & LAYOUT
+   ============================================ */
 @layer components {
   .container {
     width: 100%;
@@ -162,8 +166,8 @@
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem;
-      padding-right: 2rem;
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
       max-width: 1400px;
     }
   }
@@ -183,68 +187,163 @@
   }
 }
 
-/* Desktop immersive section heights - one section at a time viewing */
+/* ============================================
+   DESKTOP TYPOGRAPHY SCALE
+   Based on LearnUI research: larger content fills space naturally
+   ============================================ */
 @layer components {
+  /* Desktop typography enhancements */
   @media (min-width: 1024px) {
-    /* Hero section fills entire viewport */
-    .section-hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    /* Hero title - large and impactful */
+    .hero-title {
+      font-size: clamp(3rem, 5vw, 4.5rem); /* 48-72px */
+      line-height: 1.1;
+      letter-spacing: -0.02em;
     }
     
-    /* Hero image section - positioned to be half below fold */
-    .section-hero-image {
-      margin-top: auto;
-      padding-bottom: 4rem;
+    /* Section titles */
+    .section-title {
+      font-size: clamp(2.25rem, 3.5vw, 3rem); /* 36-48px */
+      line-height: 1.2;
+      letter-spacing: -0.01em;
     }
     
-    /* Major content sections - large enough to dominate viewport */
-    .section-full {
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    /* Card titles */
+    .card-title {
+      font-size: clamp(1.375rem, 2vw, 1.75rem); /* 22-28px */
+      line-height: 1.3;
     }
     
-    /* Slightly smaller sections for content-heavy areas */
-    .section-large {
-      min-height: 80vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    /* Body text - comfortable reading */
+    .body-large {
+      font-size: 1.25rem; /* 20px */
+      line-height: 1.7;
     }
     
-    /* Medium sections */
-    .section-medium {
-      min-height: 70vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .body-text {
+      font-size: 1.125rem; /* 18px */
+      line-height: 1.7;
+    }
+    
+    /* Stats and numbers */
+    .stat-number {
+      font-size: clamp(2.5rem, 4vw, 4rem); /* 40-64px */
+      font-weight: 700;
+      line-height: 1;
+    }
+    
+    /* Quote text */
+    .quote-text {
+      font-size: 1.25rem; /* 20px */
+      line-height: 1.6;
     }
   }
   
+  /* Large desktop - even bigger */
   @media (min-width: 1440px) {
-    .section-hero {
-      min-height: 100vh;
+    .hero-title {
+      font-size: clamp(4rem, 5.5vw, 5rem); /* 64-80px */
     }
     
-    .section-full {
-      min-height: 95vh;
+    .section-title {
+      font-size: clamp(2.5rem, 4vw, 3.5rem); /* 40-56px */
     }
     
-    .section-large {
-      min-height: 85vh;
+    .card-title {
+      font-size: clamp(1.5rem, 2.2vw, 2rem); /* 24-32px */
     }
     
-    .section-medium {
-      min-height: 75vh;
+    .body-large {
+      font-size: 1.375rem; /* 22px */
+    }
+    
+    .body-text {
+      font-size: 1.25rem; /* 20px */
+    }
+    
+    .stat-number {
+      font-size: clamp(3rem, 5vw, 5rem); /* 48-80px */
+    }
+    
+    .quote-text {
+      font-size: 1.375rem; /* 22px */
     }
   }
 }
 
-/* Mobile-specific improvements */
+/* ============================================
+   DESKTOP LAYOUT ENHANCEMENTS
+   Larger cards, images, and spacing
+   ============================================ */
+@layer components {
+  @media (min-width: 1024px) {
+    /* Larger section padding */
+    .section-padding {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+    
+    /* Larger cards */
+    .card-large {
+      padding: 2.5rem;
+      border-radius: 1.5rem;
+    }
+    
+    /* Hero image container - prominent */
+    .hero-image-container {
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Track record images - larger */
+    .track-image {
+      aspect-ratio: 16/10;
+      border-radius: 1rem;
+    }
+    
+    /* Testimonial cards */
+    .testimonial-card {
+      padding: 2.5rem;
+      border-radius: 1.25rem;
+    }
+    
+    /* CTA buttons - larger */
+    .cta-large {
+      height: 3.5rem; /* 56px */
+      padding-left: 2rem;
+      padding-right: 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+  
+  @media (min-width: 1440px) {
+    .section-padding {
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+    }
+    
+    .card-large {
+      padding: 3rem;
+    }
+    
+    .testimonial-card {
+      padding: 3rem;
+    }
+    
+    .cta-large {
+      height: 4rem; /* 64px */
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+      font-size: 1.125rem;
+    }
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
 @layer utilities {
   /* Smooth scrolling for the entire page */
   html {
@@ -283,5 +382,10 @@
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
+  }
+  
+  /* Max width for readable text (50-75 chars) */
+  .max-w-readable {
+    max-width: 70ch;
   }
 }
