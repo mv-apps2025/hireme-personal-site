@@ -183,6 +183,67 @@
   }
 }
 
+/* Desktop immersive section heights - one section at a time viewing */
+@layer components {
+  @media (min-width: 1024px) {
+    /* Hero section fills entire viewport */
+    .section-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    /* Hero image section - positioned to be half below fold */
+    .section-hero-image {
+      margin-top: auto;
+      padding-bottom: 4rem;
+    }
+    
+    /* Major content sections - large enough to dominate viewport */
+    .section-full {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    /* Slightly smaller sections for content-heavy areas */
+    .section-large {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    /* Medium sections */
+    .section-medium {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  
+  @media (min-width: 1440px) {
+    .section-hero {
+      min-height: 100vh;
+    }
+    
+    .section-full {
+      min-height: 95vh;
+    }
+    
+    .section-large {
+      min-height: 85vh;
+    }
+    
+    .section-medium {
+      min-height: 75vh;
+    }
+  }
+}
+
 /* Mobile-specific improvements */
 @layer utilities {
   /* Smooth scrolling for the entire page */

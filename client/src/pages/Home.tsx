@@ -129,7 +129,7 @@ export default function Home() {
       </nav>
 
       {/* ==================== HERO ==================== */}
-      <section className="pt-28 sm:pt-32 pb-8 px-4">
+      <section className="pt-28 sm:pt-32 pb-8 px-4 section-hero">
         <div className="container max-w-6xl">
           {/* Status Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-50 border border-emerald-200 rounded-full mb-6">
@@ -180,7 +180,7 @@ export default function Home() {
       </section>
 
       {/* Hero Image */}
-      <section className="px-4 pb-16">
+      <section className="px-4 pb-16 section-hero-image">
         <div className="container max-w-6xl">
           <div className="rounded-2xl overflow-hidden shadow-2xl bg-slate-100">
             <img 
@@ -195,7 +195,7 @@ export default function Home() {
       </section>
 
       {/* ==================== COMMON CHALLENGES ==================== */}
-      <section id="challenges" className="py-20 px-4 bg-slate-50 scroll-mt-20">
+      <section id="challenges" className="py-20 px-4 bg-slate-50 scroll-mt-20 section-full">
         <div className="container max-w-6xl">
           <p className="text-amber-500 text-sm font-semibold uppercase tracking-wider mb-4">Common Challenges</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
@@ -244,7 +244,7 @@ export default function Home() {
       </section>
 
       {/* ==================== WHAT I BRING ==================== */}
-      <section id="capabilities" className="py-20 px-4 scroll-mt-20">
+      <section id="capabilities" className="py-20 px-4 scroll-mt-20 section-full">
         <div className="container max-w-6xl">
           <p className="text-amber-500 text-sm font-semibold uppercase tracking-wider mb-4">What I Bring to the Table</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
@@ -309,7 +309,7 @@ export default function Home() {
       </section>
 
       {/* ==================== TRACK RECORD ==================== */}
-      <section id="results" className="py-20 px-4 bg-slate-900 text-white scroll-mt-20">
+      <section id="results" className="py-20 px-4 bg-slate-900 text-white scroll-mt-20 section-full">
         <div className="container max-w-6xl">
           <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-4">Track Record</p>
           <h2 className="text-3xl sm:text-4xl font-bold mb-12">
@@ -379,7 +379,7 @@ export default function Home() {
       </section>
 
       {/* ==================== TESTIMONIALS ==================== */}
-      <section className="py-20 px-4 bg-slate-50" aria-labelledby="testimonials-heading">
+      <section className="py-20 px-4 bg-slate-50 section-large" aria-labelledby="testimonials-heading">
         <div className="container">
           <h2 id="testimonials-heading" className="sr-only">Client Testimonials</h2>
           <p className="text-center text-amber-500 text-sm font-semibold uppercase tracking-wider mb-4">Client Testimonials</p>
@@ -454,7 +454,7 @@ export default function Home() {
       </section>
 
       {/* ==================== WORK TOGETHER ==================== */}
-      <section id="work-together" className="py-20 px-4 scroll-mt-20">
+      <section id="work-together" className="py-20 px-4 scroll-mt-20 section-large">
         <div className="container max-w-6xl">
           <p className="text-amber-500 text-sm font-semibold uppercase tracking-wider mb-4">Work Together</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-12">
@@ -526,7 +526,7 @@ export default function Home() {
       </section>
 
       {/* ==================== TAMPA BAY ==================== */}
-      <section id="tampa" className="py-20 px-4 bg-slate-900 text-white scroll-mt-20">
+      <section id="tampa" className="py-20 px-4 bg-slate-900 text-white scroll-mt-20 section-medium">
         <div className="container max-w-4xl">
           <div className="flex items-center gap-2 mb-6">
             <MapPin className="w-5 h-5 text-amber-400" aria-hidden="true" />
@@ -562,7 +562,7 @@ export default function Home() {
       </section>
 
       {/* ==================== CONTACT ==================== */}
-      <section id="contact" className="py-20 px-4 scroll-mt-20">
+      <section id="contact" className="py-20 px-4 scroll-mt-20 section-large">
         <div className="container max-w-5xl">
           <p className="text-amber-500 text-sm font-semibold uppercase tracking-wider mb-4">Let's figure out if I can help.</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
