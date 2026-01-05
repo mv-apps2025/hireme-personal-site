@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download, MessageCircle, CheckCircle2, Mail, Phone, Linkedin, MapPin, Coffee, PenTool, Menu, X, Quote, ExternalLink, Send } from "lucide-react";
+import { ArrowRight, Download, MessageCircle, CheckCircle2, Mail, Phone, Linkedin, MapPin, Coffee, PenTool, Menu, X, Quote, ExternalLink, Send, Lightbulb, Image, GitMerge, Zap, DollarSign, Rocket } from "lucide-react";
 import { useState, useEffect } from "react";
 
 /**
@@ -80,7 +80,10 @@ export default function Home() {
             <div className="w-9 h-9 lg:w-10 lg:h-10 bg-amber-500 rounded-lg flex items-center justify-center">
               <PenTool className="w-5 h-5 lg:w-6 lg:h-6 text-white" aria-hidden="true" />
             </div>
-            <span className="font-semibold text-slate-900 text-sm lg:text-base tracking-tight">Martin Veldsman</span>
+            <div className="flex flex-col">
+              <span className="font-semibold text-slate-900 text-sm lg:text-base tracking-tight leading-tight">Martin Veldsman</span>
+              <span className="hidden lg:block text-xs text-slate-500 leading-tight">Hardware Product Designer</span>
+            </div>
           </a>
           
           {/* Desktop Nav */}
@@ -93,7 +96,7 @@ export default function Home() {
 
           <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="hidden md:block">
             <Button className="bg-amber-500 hover:bg-amber-600 text-white font-semibold text-sm lg:text-base h-10 lg:h-12 px-5 lg:px-6 focus:ring-2 focus:ring-amber-500 focus:ring-offset-2">
-              Let's Talk
+              Start a Conversation
             </Button>
           </a>
 
@@ -129,53 +132,71 @@ export default function Home() {
       {/* ==================== HERO ==================== */}
       <section className="pt-28 sm:pt-32 lg:pt-40 pb-8 lg:pb-12 px-4">
         <div className="container">
-          {/* Status Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 border border-emerald-200 rounded-full mb-8 lg:mb-10">
+          {/* Status Badge - More prominent */}
+          <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-emerald-50 border border-emerald-200 rounded-full mb-8 lg:mb-10">
             <span className="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse" aria-hidden="true"></span>
-            <span className="text-emerald-700 text-sm lg:text-base font-semibold uppercase tracking-wide">Available for Opportunities</span>
+            <span className="text-emerald-700 text-sm lg:text-base font-semibold">Available for Full-Time & Contract in Tampa Bay</span>
           </div>
 
-          {/* Hero Title - Much larger on desktop */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-[1.05] tracking-tight text-slate-900 mb-8 lg:mb-10">
-            Take your product from
+          {/* Hero Title - Sharper, more differentiated */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-[1.05] tracking-tight text-slate-900 mb-6 lg:mb-8">
+            Ship hardware products faster.
             <br />
-            <span className="text-amber-500">idea to market.</span>
+            <span className="text-amber-500">Without the expensive mistakes.</span>
           </h1>
           
-          {/* Hero description - larger on desktop */}
-          <p className="text-lg sm:text-xl lg:text-2xl xl:text-2xl text-slate-600 leading-relaxed max-w-4xl mb-6 lg:mb-8">
-            Whether you're launching something new, improving an existing product, or need to visualize a concept that wins investors—I help you move from where you are to where you need to be.
+          {/* Target audience qualifier */}
+          <p className="text-base lg:text-lg text-amber-600 font-medium mb-6 lg:mb-8">
+            For hardware startups, consumer electronics brands, and product teams who need to move fast.
+          </p>
+          
+          {/* Hero description - more concrete value */}
+          <p className="text-lg sm:text-xl lg:text-2xl text-slate-600 leading-relaxed max-w-4xl mb-6 lg:mb-8">
+            I've helped 500+ products reach manufacturing—catching costly DFM issues before they become $100K problems. From napkin sketch to factory floor, I bridge the gap between beautiful design and production reality.
           </p>
 
           <p className="text-base lg:text-lg xl:text-xl text-slate-500 max-w-3xl mb-10 lg:mb-12">
-            Research → Design → Visualization → Production → Launch. One person who can do it all, or plug into your team wherever you need help.
+            Research → Design → Visualization → Production → Launch. One designer who handles the full pipeline, or plugs into your team wherever you need help.
           </p>
 
-          {/* Quick proof - larger on desktop */}
-          <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm lg:text-base xl:text-lg text-slate-500 mb-10 lg:mb-12">
-            <span className="font-medium">12+ years product development</span>
-            <span className="hidden sm:inline text-slate-300">•</span>
-            <span className="font-medium">500+ products delivered</span>
-            <span className="hidden sm:inline text-slate-300">•</span>
-            <span className="font-medium">Concept to manufacturing</span>
+          {/* Quick proof - more visual impact */}
+          <div className="flex flex-wrap gap-6 lg:gap-10 mb-10 lg:mb-12">
+            <div className="flex flex-col">
+              <span className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900">12+</span>
+              <span className="text-sm lg:text-base text-slate-500">Years Experience</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900">500+</span>
+              <span className="text-sm lg:text-base text-slate-500">Products Shipped</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-2xl lg:text-3xl xl:text-4xl font-bold text-amber-500">~$4M</span>
+              <span className="text-sm lg:text-base text-slate-500">Raised by Clients</span>
+            </div>
           </div>
 
-          {/* CTAs - larger buttons on desktop */}
-          <div className="flex flex-wrap gap-4 lg:gap-6 mb-16 lg:mb-20">
+          {/* CTAs - clearer actions */}
+          <div className="flex flex-wrap gap-4 lg:gap-6 mb-8 lg:mb-10">
             <a href="mailto:martin@designconquest.com?subject=Let's%20Talk%20-%20Product%20Development">
               <Button className="bg-amber-500 hover:bg-amber-600 text-white px-6 lg:px-8 h-12 lg:h-14 xl:h-16 text-sm lg:text-base xl:text-lg font-bold gap-2 lg:gap-3 shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 transition-all">
                 <MessageCircle className="w-4 h-4 lg:w-5 lg:h-5" aria-hidden="true" />
-                Let's Talk
+                Start a Conversation
                 <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5" aria-hidden="true" />
               </Button>
             </a>
-            <a href="/Martin-Veldsman-Resume.pdf" download>
+            <a href="#results" onClick={(e) => scrollToSection(e, 'results')}>
               <Button variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-100 px-5 lg:px-7 h-12 lg:h-14 xl:h-16 text-sm lg:text-base xl:text-lg font-semibold gap-2 lg:gap-3">
-                <Download className="w-4 h-4 lg:w-5 lg:h-5" aria-hidden="true" />
-                Download Resume
+                See My Work
+                <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5" aria-hidden="true" />
               </Button>
             </a>
           </div>
+          
+          {/* Tertiary CTA - scroll hint */}
+          <a href="#results" onClick={(e) => scrollToSection(e, 'results')} className="inline-flex items-center gap-2 text-sm lg:text-base text-slate-500 hover:text-amber-500 transition-colors mb-16 lg:mb-20">
+            <span>See how I helped BANQloop raise ~$4M</span>
+            <ArrowRight className="w-4 h-4" aria-hidden="true" />
+          </a>
         </div>
       </section>
 
@@ -205,42 +226,67 @@ export default function Home() {
             Here's where teams usually get stuck.
           </p>
 
-          {/* Challenge cards - larger on desktop */}
+          {/* Challenge cards - with icons and accent borders */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            <div className="bg-white p-6 lg:p-8 xl:p-10 rounded-xl lg:rounded-2xl border border-slate-200 hover:border-amber-200 hover:shadow-xl transition-all duration-300">
+            <div className="bg-white p-6 lg:p-8 xl:p-10 rounded-xl lg:rounded-2xl border-l-4 border-l-amber-400 border border-slate-200 hover:shadow-xl transition-all duration-300 group">
+              <div className="w-12 h-12 lg:w-14 lg:h-14 bg-amber-50 rounded-xl flex items-center justify-center mb-4 lg:mb-5 group-hover:bg-amber-100 transition-colors">
+                <Lightbulb className="w-6 h-6 lg:w-7 lg:h-7 text-amber-500" aria-hidden="true" />
+              </div>
               <h3 className="text-lg lg:text-xl xl:text-2xl font-bold text-slate-900 mb-3 lg:mb-4">"We have an idea but don't know where to start"</h3>
               <p className="text-slate-600 lg:text-lg">You need someone to turn a rough concept into something concrete—research, strategy, and a clear path forward.</p>
             </div>
 
-            <div className="bg-white p-6 lg:p-8 xl:p-10 rounded-xl lg:rounded-2xl border border-slate-200 hover:border-amber-200 hover:shadow-xl transition-all duration-300">
+            <div className="bg-white p-6 lg:p-8 xl:p-10 rounded-xl lg:rounded-2xl border-l-4 border-l-amber-400 border border-slate-200 hover:shadow-xl transition-all duration-300 group">
+              <div className="w-12 h-12 lg:w-14 lg:h-14 bg-amber-50 rounded-xl flex items-center justify-center mb-4 lg:mb-5 group-hover:bg-amber-100 transition-colors">
+                <Image className="w-6 h-6 lg:w-7 lg:h-7 text-amber-500" aria-hidden="true" />
+              </div>
               <h3 className="text-lg lg:text-xl xl:text-2xl font-bold text-slate-900 mb-3 lg:mb-4">"We need visuals that sell"</h3>
               <p className="text-slate-600 lg:text-lg">Investors, customers, or stakeholders need to see it to believe it. You need renderings, animations, or pitch materials that convince.</p>
             </div>
 
-            <div className="bg-white p-6 lg:p-8 xl:p-10 rounded-xl lg:rounded-2xl border border-slate-200 hover:border-amber-200 hover:shadow-xl transition-all duration-300">
+            <div className="bg-white p-6 lg:p-8 xl:p-10 rounded-xl lg:rounded-2xl border-l-4 border-l-amber-400 border border-slate-200 hover:shadow-xl transition-all duration-300 group">
+              <div className="w-12 h-12 lg:w-14 lg:h-14 bg-amber-50 rounded-xl flex items-center justify-center mb-4 lg:mb-5 group-hover:bg-amber-100 transition-colors">
+                <GitMerge className="w-6 h-6 lg:w-7 lg:h-7 text-amber-500" aria-hidden="true" />
+              </div>
               <h3 className="text-lg lg:text-xl xl:text-2xl font-bold text-slate-900 mb-3 lg:mb-4">"Design and manufacturing don't talk"</h3>
               <p className="text-slate-600 lg:text-lg">Beautiful concepts that can't be built. Buildable products that lost their soul. You need someone who thinks in both languages.</p>
             </div>
 
-            <div className="bg-white p-6 lg:p-8 xl:p-10 rounded-xl lg:rounded-2xl border border-slate-200 hover:border-amber-200 hover:shadow-xl transition-all duration-300">
+            <div className="bg-white p-6 lg:p-8 xl:p-10 rounded-xl lg:rounded-2xl border-l-4 border-l-amber-400 border border-slate-200 hover:shadow-xl transition-all duration-300 group">
+              <div className="w-12 h-12 lg:w-14 lg:h-14 bg-amber-50 rounded-xl flex items-center justify-center mb-4 lg:mb-5 group-hover:bg-amber-100 transition-colors">
+                <Zap className="w-6 h-6 lg:w-7 lg:h-7 text-amber-500" aria-hidden="true" />
+              </div>
               <h3 className="text-lg lg:text-xl xl:text-2xl font-bold text-slate-900 mb-3 lg:mb-4">"We're moving too slow"</h3>
               <p className="text-slate-600 lg:text-lg">Revisions drag on. Timelines slip. You need faster iteration without sacrificing quality.</p>
             </div>
 
-            <div className="bg-white p-6 lg:p-8 xl:p-10 rounded-xl lg:rounded-2xl border border-slate-200 hover:border-amber-200 hover:shadow-xl transition-all duration-300">
+            <div className="bg-white p-6 lg:p-8 xl:p-10 rounded-xl lg:rounded-2xl border-l-4 border-l-amber-400 border border-slate-200 hover:shadow-xl transition-all duration-300 group">
+              <div className="w-12 h-12 lg:w-14 lg:h-14 bg-amber-50 rounded-xl flex items-center justify-center mb-4 lg:mb-5 group-hover:bg-amber-100 transition-colors">
+                <DollarSign className="w-6 h-6 lg:w-7 lg:h-7 text-amber-500" aria-hidden="true" />
+              </div>
               <h3 className="text-lg lg:text-xl xl:text-2xl font-bold text-slate-900 mb-3 lg:mb-4">"Our costs are out of control"</h3>
               <p className="text-slate-600 lg:text-lg">The design looks great but costs too much to produce. You need DFM optimization and cost engineering from the start.</p>
             </div>
 
-            <div className="bg-white p-6 lg:p-8 xl:p-10 rounded-xl lg:rounded-2xl border border-slate-200 hover:border-amber-200 hover:shadow-xl transition-all duration-300">
+            <div className="bg-white p-6 lg:p-8 xl:p-10 rounded-xl lg:rounded-2xl border-l-4 border-l-amber-400 border border-slate-200 hover:shadow-xl transition-all duration-300 group">
+              <div className="w-12 h-12 lg:w-14 lg:h-14 bg-amber-50 rounded-xl flex items-center justify-center mb-4 lg:mb-5 group-hover:bg-amber-100 transition-colors">
+                <Rocket className="w-6 h-6 lg:w-7 lg:h-7 text-amber-500" aria-hidden="true" />
+              </div>
               <h3 className="text-lg lg:text-xl xl:text-2xl font-bold text-slate-900 mb-3 lg:mb-4">"We don't know how to launch"</h3>
               <p className="text-slate-600 lg:text-lg">Product's ready but you need packaging, user guides, sell sheets, or a presales website to actually go to market.</p>
             </div>
           </div>
 
-          <p className="text-center text-slate-600 mt-12 lg:mt-16 text-lg lg:text-xl xl:text-2xl max-w-4xl mx-auto">
-            The common thread? <span className="font-semibold text-slate-900">You need someone who can see the whole picture</span>—not just one piece of the puzzle.
-          </p>
+          {/* Transition to solution */}
+          <div className="text-center mt-12 lg:mt-16">
+            <p className="text-slate-600 text-lg lg:text-xl xl:text-2xl max-w-4xl mx-auto mb-8">
+              The common thread? <span className="font-semibold text-slate-900">You need someone who can see the whole picture</span>—not just one piece of the puzzle.
+            </p>
+            <a href="#capabilities" onClick={(e) => scrollToSection(e, 'capabilities')} className="inline-flex items-center gap-2 text-amber-500 hover:text-amber-600 font-semibold text-lg lg:text-xl transition-colors">
+              <span>Here's how I solve these challenges</span>
+              <ArrowRight className="w-5 h-5" aria-hidden="true" />
+            </a>
+          </div>
         </div>
       </section>
 
@@ -304,9 +350,15 @@ export default function Home() {
             </div>
           </div>
 
-          <p className="mt-12 lg:mt-16 text-slate-600 text-lg lg:text-xl bg-amber-50 p-6 lg:p-8 xl:p-10 rounded-xl lg:rounded-2xl border border-amber-200 max-w-5xl">
-            <span className="font-semibold text-slate-900">The difference:</span> Most teams hire separate researchers, designers, CAD engineers, visualization specialists, and manufacturing consultants. I can do all of it—or work alongside your existing team wherever you need the help.
-          </p>
+          <div className="mt-12 lg:mt-16 bg-amber-50 p-6 lg:p-8 xl:p-10 rounded-xl lg:rounded-2xl border border-amber-200 max-w-5xl">
+            <p className="text-slate-600 text-lg lg:text-xl mb-6">
+              <span className="font-semibold text-slate-900">The difference:</span> Most teams hire separate researchers, designers, CAD engineers, visualization specialists, and manufacturing consultants. I can do all of it—or work alongside your existing team wherever you need the help.
+            </p>
+            <a href="#results" onClick={(e) => scrollToSection(e, 'results')} className="inline-flex items-center gap-2 text-amber-600 hover:text-amber-700 font-semibold text-lg transition-colors">
+              <span>See how this approach delivers results</span>
+              <ArrowRight className="w-5 h-5" aria-hidden="true" />
+            </a>
+          </div>
         </div>
       </section>
 
@@ -359,9 +411,9 @@ export default function Home() {
           </div>
 
           {/* Startup Sprints - larger layout */}
-          <div>
+          <div className="mb-16 lg:mb-20">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              <div className="rounded-xl lg:rounded-2xl overflow-hidden bg-slate-800 aspect-[4/3]">
+              <div className="rounded-xl lg:rounded-2xl overflow-hidden bg-slate-800 aspect-[4/3] hover:opacity-90 transition-opacity">
                 <img 
                   src="/images/product-portfolio-optimized.webp" 
                   alt="Grid of various product designs showing range of capabilities across different industries"
@@ -370,18 +422,27 @@ export default function Home() {
                 />
               </div>
               <div className="flex flex-col justify-center">
-                <p className="text-amber-400 font-bold text-lg lg:text-xl xl:text-2xl uppercase tracking-wider mb-3 lg:mb-4">10x Faster</p>
+                <p className="text-amber-400 font-bold text-xl lg:text-2xl xl:text-3xl uppercase tracking-wider mb-3 lg:mb-4">10x Faster</p>
                 <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-4 lg:mb-6">Startup Sprints</h3>
                 <p className="text-slate-400 text-lg lg:text-xl mb-6 lg:mb-8">Rapid 0→1 product development for early-stage founders. AI-accelerated workflows compress months into weeks.</p>
                 <p className="text-amber-400 font-bold text-lg lg:text-xl">3-6 months → 1-2 weeks</p>
               </div>
             </div>
           </div>
+
+          {/* Transition to testimonials */}
+          <div className="text-center pt-8 border-t border-slate-700">
+            <p className="text-slate-400 text-lg lg:text-xl mb-4">Don't just take my word for it.</p>
+            <a href="#testimonials" onClick={(e) => { e.preventDefault(); document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' }); }} className="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 font-semibold text-lg transition-colors">
+              <span>Hear from clients</span>
+              <ArrowRight className="w-5 h-5" aria-hidden="true" />
+            </a>
+          </div>
         </div>
       </section>
 
       {/* ==================== TESTIMONIALS ==================== */}
-      <section className="py-20 lg:py-28 xl:py-32 px-4 bg-slate-50" aria-labelledby="testimonials-heading">
+      <section id="testimonials" className="py-20 lg:py-28 xl:py-32 px-4 bg-slate-50 scroll-mt-20" aria-labelledby="testimonials-heading">
         <div className="container">
           <h2 id="testimonials-heading" className="sr-only">Client Testimonials</h2>
           <p className="text-center text-amber-500 text-sm lg:text-base font-semibold uppercase tracking-wider mb-4 lg:mb-6">Client Testimonials</p>
@@ -391,7 +452,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-6 lg:mb-8">
             <div className="bg-white p-8 lg:p-10 rounded-xl lg:rounded-2xl border border-slate-200 hover:shadow-xl transition-shadow duration-300">
               <Quote className="w-10 h-10 lg:w-12 lg:h-12 text-amber-400 mb-4 lg:mb-6" aria-hidden="true" />
-              <p className="text-slate-700 text-base lg:text-lg xl:text-xl mb-6 lg:mb-8">"Martin delivered product designs for us that have clear advantages over anything on the market. His understanding of both aesthetics and engineering constraints is rare."</p>
+              <p className="text-slate-700 text-base lg:text-lg xl:text-xl mb-6 lg:mb-8">"Martin delivered product designs for us that have <span className="font-semibold text-slate-900">clear advantages over anything on the market</span>. His understanding of both aesthetics and engineering constraints is rare."</p>
               <div className="flex items-center gap-3 lg:gap-4">
                 <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white font-semibold text-base lg:text-lg">RC</div>
                 <div>
@@ -403,7 +464,7 @@ export default function Home() {
 
             <div className="bg-white p-8 lg:p-10 rounded-xl lg:rounded-2xl border border-slate-200 hover:shadow-xl transition-shadow duration-300">
               <Quote className="w-10 h-10 lg:w-12 lg:h-12 text-amber-400 mb-4 lg:mb-6" aria-hidden="true" />
-              <p className="text-slate-700 text-base lg:text-lg xl:text-xl mb-6 lg:mb-8">"Martin's ability to bridge design vision with manufacturing reality saved us months of back-and-forth. He caught issues our engineers missed and proposed solutions on the spot."</p>
+              <p className="text-slate-700 text-base lg:text-lg xl:text-xl mb-6 lg:mb-8">"Martin's ability to bridge design vision with manufacturing reality <span className="font-semibold text-slate-900">saved us months of back-and-forth</span>. He caught issues our engineers missed and proposed solutions on the spot."</p>
               <div className="flex items-center gap-3 lg:gap-4">
                 <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white font-semibold text-base lg:text-lg">AT</div>
                 <div>
@@ -415,7 +476,7 @@ export default function Home() {
 
             <div className="bg-white p-8 lg:p-10 rounded-xl lg:rounded-2xl border border-slate-200 hover:shadow-xl transition-shadow duration-300">
               <Quote className="w-10 h-10 lg:w-12 lg:h-12 text-amber-400 mb-4 lg:mb-6" aria-hidden="true" />
-              <p className="text-slate-700 text-base lg:text-lg xl:text-xl mb-6 lg:mb-8">"Fast, professional, and understood our startup constraints. Martin delivered investor-ready renderings in days that helped us close our seed round."</p>
+              <p className="text-slate-700 text-base lg:text-lg xl:text-xl mb-6 lg:mb-8">"Fast, professional, and understood our startup constraints. Martin delivered <span className="font-semibold text-slate-900">investor-ready renderings in days</span> that helped us close our seed round."</p>
               <div className="flex items-center gap-3 lg:gap-4">
                 <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white font-semibold text-base lg:text-lg">DC</div>
                 <div>
@@ -452,6 +513,15 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* Transition to Work Together */}
+          <div className="text-center mt-12 lg:mt-16">
+            <p className="text-slate-600 text-lg lg:text-xl mb-4">Ready to get similar results?</p>
+            <a href="#work-together" onClick={(e) => scrollToSection(e, 'work-together')} className="inline-flex items-center gap-2 text-amber-500 hover:text-amber-600 font-semibold text-lg transition-colors">
+              <span>Let's work together</span>
+              <ArrowRight className="w-5 h-5" aria-hidden="true" />
+            </a>
+          </div>
         </div>
       </section>
 
@@ -467,7 +537,8 @@ export default function Home() {
             {/* Full-Time - larger card */}
             <div className="p-8 lg:p-10 xl:p-12 bg-white border-2 border-amber-500 rounded-2xl lg:rounded-3xl shadow-lg shadow-amber-500/10 hover:shadow-amber-500/20 transition-shadow duration-300">
               <p className="text-amber-500 font-semibold text-sm lg:text-base uppercase tracking-wider mb-2 lg:mb-3">Full-Time / Embedded</p>
-              <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-4 lg:mb-6">Join your team</h3>
+              <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-3 lg:mb-4">Join your team</h3>
+              <p className="text-slate-500 text-sm lg:text-base mb-4 lg:mb-5">Ideal for: Companies building hardware products who need ongoing design & manufacturing expertise</p>
               <p className="text-slate-600 text-base lg:text-lg xl:text-xl mb-6 lg:mb-8">Looking for the right fit—a team building products that matter, where design thinking and manufacturing reality both have a seat at the table.</p>
               <ul className="space-y-4 lg:space-y-5 mb-8 lg:mb-10">
                 <li className="flex items-start gap-3 lg:gap-4">
@@ -497,7 +568,8 @@ export default function Home() {
             {/* Contract - larger card */}
             <div className="p-8 lg:p-10 xl:p-12 bg-white border border-slate-200 rounded-2xl lg:rounded-3xl hover:border-slate-300 hover:shadow-xl transition-all duration-300">
               <p className="text-slate-500 font-semibold text-sm lg:text-base uppercase tracking-wider mb-2 lg:mb-3">Contract / Project</p>
-              <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-4 lg:mb-6">Solve a specific challenge</h3>
+              <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-3 lg:mb-4">Solve a specific challenge</h3>
+              <p className="text-slate-500 text-sm lg:text-base mb-4 lg:mb-5">Ideal for: Startups, founders, or teams with a specific project or milestone to hit</p>
               <p className="text-slate-600 text-base lg:text-lg xl:text-xl mb-6 lg:mb-8">Have a project that needs expertise? I can plug in wherever you need help—from quick concept sprints to full product development.</p>
               <ul className="space-y-4 lg:space-y-5 mb-8 lg:mb-10">
                 <li className="flex items-start gap-3 lg:gap-4">
@@ -523,6 +595,15 @@ export default function Home() {
                 </Button>
               </a>
             </div>
+          </div>
+
+          {/* Not sure fallback */}
+          <div className="text-center mt-12 lg:mt-16 pt-8 lg:pt-10 border-t border-slate-200">
+            <p className="text-slate-600 text-lg lg:text-xl mb-4">Not sure which is right for you?</p>
+            <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="inline-flex items-center gap-2 text-amber-500 hover:text-amber-600 font-semibold text-lg transition-colors">
+              <span>Let's chat and figure it out together</span>
+              <ArrowRight className="w-5 h-5" aria-hidden="true" />
+            </a>
           </div>
         </div>
       </section>
@@ -651,11 +732,14 @@ export default function Home() {
       <footer className="py-12 lg:py-16 px-4 bg-slate-900 text-white">
         <div className="container">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 lg:gap-8">
-            <div className="flex items-center gap-3 lg:gap-4">
-              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-amber-500 rounded-lg flex items-center justify-center">
-                <PenTool className="w-5 h-5 lg:w-6 lg:h-6 text-white" aria-hidden="true" />
+            <div>
+              <div className="flex items-center gap-3 lg:gap-4 mb-2">
+                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-amber-500 rounded-lg flex items-center justify-center">
+                  <PenTool className="w-5 h-5 lg:w-6 lg:h-6 text-white" aria-hidden="true" />
+                </div>
+                <span className="font-semibold text-white text-base lg:text-lg">Martin Veldsman</span>
               </div>
-              <span className="font-semibold text-white text-base lg:text-lg">Martin Veldsman</span>
+              <p className="text-slate-400 text-sm lg:text-base">Helping hardware teams ship products faster, without the expensive mistakes.</p>
             </div>
             
             <div className="flex flex-wrap gap-6 lg:gap-8 text-sm lg:text-base text-slate-400">
