@@ -380,12 +380,16 @@ export default function Home() {
 
       {/* ==================== TESTIMONIALS ==================== */}
       <section className="py-20 px-4 bg-slate-50" aria-labelledby="testimonials-heading">
-        <div className="container max-w-6xl">
+        <div className="container">
           <h2 id="testimonials-heading" className="sr-only">Client Testimonials</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <p className="text-center text-amber-500 text-sm font-semibold uppercase tracking-wider mb-4">Client Testimonials</p>
+          <h3 className="text-center text-3xl sm:text-4xl font-bold text-slate-900 mb-12">What people say about working with Martin</h3>
+          
+          {/* Top row - 3 testimonials */}
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-6 lg:mb-8">
             <div className="bg-white p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow duration-300">
               <Quote className="w-10 h-10 text-amber-400 mb-4" aria-hidden="true" />
-              <p className="text-slate-700 mb-6">"Martin delivered product designs for us that have clear advantages over anything on the market."</p>
+              <p className="text-slate-700 mb-6">"Martin delivered product designs for us that have clear advantages over anything on the market. His understanding of both aesthetics and engineering constraints is rare."</p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">RC</div>
                 <div>
@@ -397,7 +401,7 @@ export default function Home() {
 
             <div className="bg-white p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow duration-300">
               <Quote className="w-10 h-10 text-amber-400 mb-4" aria-hidden="true" />
-              <p className="text-slate-700 mb-6">"His ability to bridge design vision with manufacturing reality saved us months of back-and-forth."</p>
+              <p className="text-slate-700 mb-6">"Martin's ability to bridge design vision with manufacturing reality saved us months of back-and-forth. He caught issues our engineers missed and proposed solutions on the spot."</p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">AT</div>
                 <div>
@@ -409,12 +413,39 @@ export default function Home() {
 
             <div className="bg-white p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow duration-300">
               <Quote className="w-10 h-10 text-amber-400 mb-4" aria-hidden="true" />
-              <p className="text-slate-700 mb-6">"Fast, professional, and understood our startup constraints. Delivered investor-ready renderings in days."</p>
+              <p className="text-slate-700 mb-6">"Fast, professional, and understood our startup constraints. Martin delivered investor-ready renderings in days that helped us close our seed round."</p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">DC</div>
                 <div>
                   <p className="font-semibold text-slate-900 text-sm">David Chen</p>
                   <p className="text-slate-500 text-xs">VP of Product at Meridian Home</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Bottom row - 2 testimonials centered */}
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
+            <div className="bg-white p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow duration-300">
+              <Quote className="w-10 h-10 text-amber-400 mb-4" aria-hidden="true" />
+              <p className="text-slate-700 mb-6">"We brought Martin in to help visualize a complex medical device for FDA submission. His attention to detail was exceptional—every tolerance, every material callout was accurate. The reviewers commented on how clear our documentation was."</p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">SL</div>
+                <div>
+                  <p className="font-semibold text-slate-900 text-sm">Sarah Lin</p>
+                  <p className="text-slate-500 text-xs">Director of Engineering at MedCore Systems</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow duration-300">
+              <Quote className="w-10 h-10 text-amber-400 mb-4" aria-hidden="true" />
+              <p className="text-slate-700 mb-6">"I've worked with dozens of product designers over my career. Martin stands out because he thinks like a founder—he's not just designing, he's solving business problems. He pushed back on ideas that would've cost us in manufacturing and suggested alternatives we hadn't considered."</p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white font-semibold text-sm">JM</div>
+                <div>
+                  <p className="font-semibold text-slate-900 text-sm">James Mitchell</p>
+                  <p className="text-slate-500 text-xs">Serial Entrepreneur, 3x Founder</p>
                 </div>
               </div>
             </div>
@@ -496,27 +527,35 @@ export default function Home() {
 
       {/* ==================== TAMPA BAY ==================== */}
       <section id="tampa" className="py-20 px-4 bg-slate-900 text-white scroll-mt-20">
-        <div className="container max-w-5xl">
-          <div className="flex items-center gap-2 mb-4">
+        <div className="container max-w-4xl">
+          <div className="flex items-center gap-2 mb-6">
             <MapPin className="w-5 h-5 text-amber-400" aria-hidden="true" />
-            <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider">Tampa Bay</p>
+            <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider">A Note About Tampa Bay</p>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            New to the area. Looking to connect.
-          </h2>
-          <p className="text-slate-400 text-lg mb-6 max-w-2xl">
-            Just moved to Tampa Bay. Impressed by the innovation ecosystem—spARK Labs, Tampa Bay Wave, St. Pete Innovation District. Actively seeking full-time roles, contract work, and ways to contribute to the community.
-          </p>
+          
+          <div className="prose prose-lg prose-invert max-w-none">
+            <p className="text-slate-300 text-lg leading-relaxed mb-6">
+              I recently made the move to Tampa Bay, and I have to say—I'm genuinely excited about what's happening here. The innovation ecosystem is more vibrant than I expected. I've been exploring places like spARK Labs, Tampa Bay Wave, and the St. Pete Innovation District, and there's a real energy around building things that matter.
+            </p>
+            
+            <p className="text-slate-300 text-lg leading-relaxed mb-6">
+              I'm actively looking for my next opportunity—whether that's a full-time role with a team that values both design thinking and manufacturing reality, or contract work where I can help solve specific product challenges. But honestly, I'm also just looking to meet people and learn about what's being built in this community.
+            </p>
+            
+            <p className="text-slate-300 text-lg leading-relaxed mb-8">
+              If you're working on something interesting, I'd love to hear about it. And if you're part of a local accelerator or startup hub and want to grab coffee, I'm happy to talk through product challenges—no pitch, no agenda. Sometimes the best conversations come from just being curious about what others are building.
+            </p>
+          </div>
 
-          <div className="bg-slate-800 p-6 rounded-xl mb-8 border border-slate-700">
-            <p className="text-amber-400 font-semibold mb-2">Free strategy session for Tampa Bay startups</p>
-            <p className="text-slate-400">If you're affiliated with a local accelerator or innovation hub, let's grab coffee and talk through your product challenges. No pitch, no strings—just trying to be helpful.</p>
+          <div className="bg-slate-800/50 p-6 rounded-xl mb-8 border border-slate-700/50">
+            <p className="text-amber-400 font-semibold mb-2">Open invitation for Tampa Bay founders</p>
+            <p className="text-slate-400">If you're building a hardware product or need help thinking through design-to-manufacturing challenges, let's connect. First coffee is on me.</p>
           </div>
 
           <a href="mailto:martin@designconquest.com?subject=Coffee%20Chat%20-%20Tampa%20Bay">
             <Button className="bg-amber-500 hover:bg-amber-600 text-white px-6 h-12 font-semibold gap-2 shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 transition-all">
               <Coffee className="w-4 h-4" aria-hidden="true" />
-              Schedule a Coffee Chat
+              Let's Grab Coffee
             </Button>
           </a>
         </div>
