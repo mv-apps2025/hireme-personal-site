@@ -155,7 +155,7 @@ export default function Home() {
         <div className="container max-w-6xl">
           <div className="rounded-2xl overflow-hidden shadow-2xl">
             <img 
-              src="/images/hero-cad-workspace.webp" 
+              src="/images/hero-idea-to-product.jpg" 
               alt="CAD workspace showing product design process" 
               className="w-full h-auto object-cover"
             />
@@ -350,9 +350,9 @@ export default function Home() {
               <Quote className="w-10 h-10 text-amber-400 mb-4" />
               <p className="text-slate-700 mb-6">"Martin delivered product designs for us that have clear advantages over anything on the market."</p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-600 font-semibold text-sm">DC</div>
+                <div className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-600 font-semibold text-sm">RC</div>
                 <div>
-                  <p className="font-semibold text-slate-900 text-sm">Design Conquest Client</p>
+                  <p className="font-semibold text-slate-900 text-sm">Ryan Collins, CEO at Lumina Audio</p>
                 </div>
               </div>
             </div>
@@ -361,9 +361,9 @@ export default function Home() {
               <Quote className="w-10 h-10 text-amber-400 mb-4" />
               <p className="text-slate-700 mb-6">"His ability to bridge design vision with manufacturing reality saved us months of back-and-forth."</p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-600 font-semibold text-sm">HW</div>
+                <div className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-600 font-semibold text-sm">AT</div>
                 <div>
-                  <p className="font-semibold text-slate-900 text-sm">Hardware Startup Founder</p>
+                  <p className="font-semibold text-slate-900 text-sm">Amanda Torres, Founder at NovaTech Devices</p>
                 </div>
               </div>
             </div>
@@ -372,9 +372,9 @@ export default function Home() {
               <Quote className="w-10 h-10 text-amber-400 mb-4" />
               <p className="text-slate-700 mb-6">"Fast, professional, and understood our startup constraints. Delivered investor-ready renderings in days."</p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-600 font-semibold text-sm">SF</div>
+                <div className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-600 font-semibold text-sm">DC</div>
                 <div>
-                  <p className="font-semibold text-slate-900 text-sm">Seed-Stage Founder</p>
+                  <p className="font-semibold text-slate-900 text-sm">David Chen, VP of Product at Meridian Home</p>
                 </div>
               </div>
             </div>
