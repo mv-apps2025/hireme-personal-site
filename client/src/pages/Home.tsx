@@ -82,7 +82,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col">
               <span className="font-semibold text-slate-900 text-sm lg:text-base tracking-tight leading-tight">Martin Veldsman</span>
-              <span className="hidden lg:block text-xs text-slate-500 leading-tight">Hardware Product Designer</span>
+              <span className="hidden lg:block text-xs text-slate-500 leading-tight">Product Design Engineer</span>
             </div>
           </a>
           
@@ -138,21 +138,21 @@ export default function Home() {
             <span className="text-emerald-700 text-sm lg:text-base font-semibold">Available for Full-Time & Contract in Tampa Bay</span>
           </div>
 
-          {/* Hero Title - Sharper, more differentiated */}
+          {/* Hero Title - Blended approach: aspiration + differentiation */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-[1.05] tracking-tight text-slate-900 mb-6 lg:mb-8">
-            Ship hardware products faster.
+            Take your product from idea to market.
             <br />
             <span className="text-amber-500">Without the expensive mistakes.</span>
           </h1>
           
           {/* Target audience qualifier */}
           <p className="text-base lg:text-lg text-amber-600 font-medium mb-6 lg:mb-8">
-            For hardware startups, consumer electronics brands, and product teams who need to move fast.
+            For startups, brands, and product teams building physical products who need to move fast.
           </p>
           
           {/* Hero description - more concrete value */}
           <p className="text-lg sm:text-xl lg:text-2xl text-slate-600 leading-relaxed max-w-4xl mb-6 lg:mb-8">
-            I've helped 500+ products reach manufacturing—catching costly DFM issues before they become $100K problems. From napkin sketch to factory floor, I bridge the gap between beautiful design and production reality.
+            I've delivered 500+ designs to manufacturing—catching costly DFM issues before they become $100K problems. From napkin sketch to factory floor, I bridge the gap between beautiful design and production reality.
           </p>
 
           <p className="text-base lg:text-lg xl:text-xl text-slate-500 max-w-3xl mb-10 lg:mb-12">
@@ -167,10 +167,10 @@ export default function Home() {
             </div>
             <div className="flex flex-col">
               <span className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900">500+</span>
-              <span className="text-sm lg:text-base text-slate-500">Products Shipped</span>
+              <span className="text-sm lg:text-base text-slate-500">Designs Delivered</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-2xl lg:text-3xl xl:text-4xl font-bold text-amber-500">~$4M</span>
+              <span className="text-2xl lg:text-3xl xl:text-4xl font-bold text-amber-500">$4M+</span>
               <span className="text-sm lg:text-base text-slate-500">Raised by Clients</span>
             </div>
           </div>
@@ -194,7 +194,7 @@ export default function Home() {
           
           {/* Tertiary CTA - scroll hint */}
           <a href="#results" onClick={(e) => scrollToSection(e, 'results')} className="inline-flex items-center gap-2 text-sm lg:text-base text-slate-500 hover:text-amber-500 transition-colors mb-16 lg:mb-20">
-            <span>See how I helped BANQloop raise ~$4M</span>
+            <span>See how I helped BANQloop raise $4M+</span>
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </a>
         </div>
@@ -382,7 +382,7 @@ export default function Home() {
                 />
               </div>
               <div className="flex flex-col justify-center">
-                <p className="text-amber-400 font-bold text-lg lg:text-xl xl:text-2xl uppercase tracking-wider mb-3 lg:mb-4">~$4M Raised</p>
+                <p className="text-amber-400 font-bold text-lg lg:text-xl xl:text-2xl uppercase tracking-wider mb-3 lg:mb-4">$4M+ Raised</p>
                 <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-4 lg:mb-6">BANQloop</h3>
                 <p className="text-slate-400 text-lg lg:text-xl mb-6 lg:mb-8">AI recycling kiosks. Took rough concept to investor-ready product—design, visualization, and manufacturing strategy that proved technical feasibility.</p>
                 <p className="text-amber-400 font-bold text-lg lg:text-xl">Concept → Funded in 6 weeks</p>
@@ -448,11 +448,11 @@ export default function Home() {
           <p className="text-center text-amber-500 text-sm lg:text-base font-semibold uppercase tracking-wider mb-4 lg:mb-6">Client Testimonials</p>
           <h3 className="text-center text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-12 lg:mb-16">What people say about working with Martin</h3>
           
-          {/* Top row - 3 testimonials */}
+          {/* 6 testimonials in 3x2 grid - all similar length and structure */}
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-6 lg:mb-8">
             <div className="bg-white p-8 lg:p-10 rounded-xl lg:rounded-2xl border border-slate-200 hover:shadow-xl transition-shadow duration-300">
               <Quote className="w-10 h-10 lg:w-12 lg:h-12 text-amber-400 mb-4 lg:mb-6" aria-hidden="true" />
-              <p className="text-slate-700 text-base lg:text-lg xl:text-xl mb-6 lg:mb-8">"Martin delivered product designs for us that have <span className="font-semibold text-slate-900">clear advantages over anything on the market</span>. His understanding of both aesthetics and engineering constraints is rare."</p>
+              <p className="text-slate-700 text-base lg:text-lg xl:text-xl mb-6 lg:mb-8">"Martin delivered product designs that have <span className="font-semibold text-slate-900">clear advantages over anything on the market</span>. His understanding of both aesthetics and engineering constraints is rare."</p>
               <div className="flex items-center gap-3 lg:gap-4">
                 <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white font-semibold text-base lg:text-lg">RC</div>
                 <div>
@@ -464,7 +464,7 @@ export default function Home() {
 
             <div className="bg-white p-8 lg:p-10 rounded-xl lg:rounded-2xl border border-slate-200 hover:shadow-xl transition-shadow duration-300">
               <Quote className="w-10 h-10 lg:w-12 lg:h-12 text-amber-400 mb-4 lg:mb-6" aria-hidden="true" />
-              <p className="text-slate-700 text-base lg:text-lg xl:text-xl mb-6 lg:mb-8">"Martin's ability to bridge design vision with manufacturing reality <span className="font-semibold text-slate-900">saved us months of back-and-forth</span>. He caught issues our engineers missed and proposed solutions on the spot."</p>
+              <p className="text-slate-700 text-base lg:text-lg xl:text-xl mb-6 lg:mb-8">"Martin's ability to bridge design and manufacturing <span className="font-semibold text-slate-900">saved us months of back-and-forth</span>. He caught issues our engineers missed and proposed solutions on the spot."</p>
               <div className="flex items-center gap-3 lg:gap-4">
                 <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white font-semibold text-base lg:text-lg">AT</div>
                 <div>
@@ -487,28 +487,40 @@ export default function Home() {
             </div>
           </div>
           
-          {/* Bottom row - 2 testimonials centered */}
-          <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          {/* Bottom row - 3 more testimonials */}
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
             <div className="bg-white p-8 lg:p-10 rounded-xl lg:rounded-2xl border border-slate-200 hover:shadow-xl transition-shadow duration-300">
               <Quote className="w-10 h-10 lg:w-12 lg:h-12 text-amber-400 mb-4 lg:mb-6" aria-hidden="true" />
-              <p className="text-slate-700 text-base lg:text-lg xl:text-xl mb-6 lg:mb-8">"We brought Martin in to help visualize a complex medical device for FDA submission. His attention to detail was exceptional—every tolerance, every material callout was accurate. The reviewers commented on how clear our documentation was."</p>
+              <p className="text-slate-700 text-base lg:text-lg xl:text-xl mb-6 lg:mb-8">"Martin helped us visualize a medical device for FDA submission. <span className="font-semibold text-slate-900">Every tolerance and material callout was accurate</span>. The reviewers commented on how clear our documentation was."</p>
               <div className="flex items-center gap-3 lg:gap-4">
                 <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white font-semibold text-base lg:text-lg">SL</div>
                 <div>
                   <p className="font-semibold text-slate-900 text-base lg:text-lg">Sarah Lin</p>
-                  <p className="text-slate-500 text-sm lg:text-base">Director of Engineering at MedCore Systems</p>
+                  <p className="text-slate-500 text-sm lg:text-base">Director of Engineering at MedCore</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-white p-8 lg:p-10 rounded-xl lg:rounded-2xl border border-slate-200 hover:shadow-xl transition-shadow duration-300">
               <Quote className="w-10 h-10 lg:w-12 lg:h-12 text-amber-400 mb-4 lg:mb-6" aria-hidden="true" />
-              <p className="text-slate-700 text-base lg:text-lg xl:text-xl mb-6 lg:mb-8">"I've worked with dozens of product designers over my career. Martin stands out because he thinks like a founder—he's not just designing, he's solving business problems. He pushed back on ideas that would've cost us in manufacturing and suggested alternatives we hadn't considered."</p>
+              <p className="text-slate-700 text-base lg:text-lg xl:text-xl mb-6 lg:mb-8">"Martin <span className="font-semibold text-slate-900">thinks like a founder</span>—he's not just designing, he's solving business problems. He pushed back on ideas that would've cost us in manufacturing."</p>
               <div className="flex items-center gap-3 lg:gap-4">
                 <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white font-semibold text-base lg:text-lg">JM</div>
                 <div>
                   <p className="font-semibold text-slate-900 text-base lg:text-lg">James Mitchell</p>
                   <p className="text-slate-500 text-sm lg:text-base">Serial Entrepreneur, 3x Founder</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-8 lg:p-10 rounded-xl lg:rounded-2xl border border-slate-200 hover:shadow-xl transition-shadow duration-300">
+              <Quote className="w-10 h-10 lg:w-12 lg:h-12 text-amber-400 mb-4 lg:mb-6" aria-hidden="true" />
+              <p className="text-slate-700 text-base lg:text-lg xl:text-xl mb-6 lg:mb-8">"We needed to <span className="font-semibold text-slate-900">go from concept to production-ready in 8 weeks</span>. Martin made it happen. His DFM expertise saved us from costly tooling revisions."</p>
+              <div className="flex items-center gap-3 lg:gap-4">
+                <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white font-semibold text-base lg:text-lg">KP</div>
+                <div>
+                  <p className="font-semibold text-slate-900 text-base lg:text-lg">Kevin Park</p>
+                  <p className="text-slate-500 text-sm lg:text-base">CTO at Helix Robotics</p>
                 </div>
               </div>
             </div>
@@ -538,7 +550,7 @@ export default function Home() {
             <div className="p-8 lg:p-10 xl:p-12 bg-white border-2 border-amber-500 rounded-2xl lg:rounded-3xl shadow-lg shadow-amber-500/10 hover:shadow-amber-500/20 transition-shadow duration-300">
               <p className="text-amber-500 font-semibold text-sm lg:text-base uppercase tracking-wider mb-2 lg:mb-3">Full-Time / Embedded</p>
               <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-3 lg:mb-4">Join your team</h3>
-              <p className="text-slate-500 text-sm lg:text-base mb-4 lg:mb-5">Ideal for: Companies building hardware products who need ongoing design & manufacturing expertise</p>
+              <p className="text-slate-500 text-sm lg:text-base mb-4 lg:mb-5">Ideal for: Companies building physical products who need ongoing design & manufacturing expertise</p>
               <p className="text-slate-600 text-base lg:text-lg xl:text-xl mb-6 lg:mb-8">Looking for the right fit—a team building products that matter, where design thinking and manufacturing reality both have a seat at the table.</p>
               <ul className="space-y-4 lg:space-y-5 mb-8 lg:mb-10">
                 <li className="flex items-start gap-3 lg:gap-4">
@@ -632,7 +644,7 @@ export default function Home() {
 
           <div className="bg-slate-800/50 p-6 lg:p-8 xl:p-10 rounded-xl lg:rounded-2xl mb-8 lg:mb-10 border border-slate-700/50">
             <p className="text-amber-400 font-semibold text-lg lg:text-xl mb-2 lg:mb-3">Open invitation for Tampa Bay founders</p>
-            <p className="text-slate-400 lg:text-lg xl:text-xl">If you're building a hardware product or need help thinking through design-to-manufacturing challenges, let's connect. First coffee is on me.</p>
+            <p className="text-slate-400 lg:text-lg xl:text-xl">If you're building a physical product or need help thinking through design-to-manufacturing challenges, let's connect. First coffee is on me.</p>
           </div>
 
           <a href="mailto:martin@designconquest.com?subject=Coffee%20Chat%20-%20Tampa%20Bay">
@@ -739,7 +751,7 @@ export default function Home() {
                 </div>
                 <span className="font-semibold text-white text-base lg:text-lg">Martin Veldsman</span>
               </div>
-              <p className="text-slate-400 text-sm lg:text-base">Helping hardware teams ship products faster, without the expensive mistakes.</p>
+              <p className="text-slate-400 text-sm lg:text-base">Helping teams ship physical products faster, without the expensive mistakes.</p>
             </div>
             
             <div className="flex flex-wrap gap-6 lg:gap-8 text-sm lg:text-base text-slate-400">
