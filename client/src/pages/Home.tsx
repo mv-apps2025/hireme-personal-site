@@ -1,17 +1,18 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download, MessageCircle, CheckCircle2, Mail, Phone, Linkedin, MapPin, Coffee, Zap, Factory, DollarSign, Clock, Lightbulb, PenTool, Sparkles, Rocket, Users, Search, Menu, X, Quote, ExternalLink } from "lucide-react";
+import { ArrowRight, Download, MessageCircle, CheckCircle2, Mail, Phone, Linkedin, MapPin, Coffee, PenTool, Menu, X, Quote, ExternalLink } from "lucide-react";
 import { useState } from "react";
 
 /**
- * MERGED VERSION - Best of both worlds
- * - Imagery: Real photos from new version
- * - Copy: Visitor-focused structure from current version
+ * COMPREHENSIVE VERSION - Reverted to full copy from martinveldsman.manus.space
+ * - Copy: Full comprehensive visitor-focused copy
+ * - Images: Fixed capability images with unique generated images
  * - Theme: Light with navy accent sections
- * - Testimonials: 3 client quotes
+ * - Testimonials: Client quotes
  */
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeCapability, setActiveCapability] = useState('design');
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
@@ -20,6 +21,29 @@ export default function Home() {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     setMobileMenuOpen(false);
+  };
+
+  const capabilities = {
+    research: {
+      title: "Research & Strategy",
+      items: ["User research & interviews", "Market research & analysis", "Competitor analysis", "Strategic planning", "Product branding"]
+    },
+    design: {
+      title: "Design & CAD",
+      items: ["Concept ideation & sketching", "3D CAD modeling (SolidWorks, Fusion, Rhino)", "Form development & refinement", "Color, material, finish (CMF)", "User-centered design", "Design for manufacturing (DFM)"]
+    },
+    visualization: {
+      title: "Visualization",
+      items: ["CGI product renders (KeyShot)", "CGI animations", "VR visualization (Gravity Sketch)", "AI-assisted visualization", "Pitch deck materials", "Investor presentations"]
+    },
+    production: {
+      title: "Production",
+      items: ["3D printing & rapid prototyping", "Functional prototypes", "Dimensioned drawings", "Assembly documents", "Bill of materials", "Supplier coordination"]
+    },
+    launch: {
+      title: "Go-to-Market",
+      items: ["Licensing sell sheets", "Presales websites", "Packaging design", "User guides", "Merchandise design", "Go-to-market guidance"]
+    }
   };
 
   return (
@@ -36,14 +60,15 @@ export default function Home() {
           
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#work" onClick={(e) => scrollToSection(e, 'work')} className="text-sm text-slate-600 hover:text-slate-900 transition-colors">Work</a>
-            <a href="#services" onClick={(e) => scrollToSection(e, 'services')} className="text-sm text-slate-600 hover:text-slate-900 transition-colors">Services</a>
-            <a href="#tampa" onClick={(e) => scrollToSection(e, 'tampa')} className="text-sm text-slate-600 hover:text-slate-900 transition-colors">Tampa Bay</a>
+            <a href="#challenges" onClick={(e) => scrollToSection(e, 'challenges')} className="text-sm text-slate-600 hover:text-slate-900 transition-colors">Challenges</a>
+            <a href="#capabilities" onClick={(e) => scrollToSection(e, 'capabilities')} className="text-sm text-slate-600 hover:text-slate-900 transition-colors">Capabilities</a>
+            <a href="#results" onClick={(e) => scrollToSection(e, 'results')} className="text-sm text-slate-600 hover:text-slate-900 transition-colors">Results</a>
+            <a href="#work-together" onClick={(e) => scrollToSection(e, 'work-together')} className="text-sm text-slate-600 hover:text-slate-900 transition-colors">Work Together</a>
           </div>
 
           <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="hidden md:block">
             <Button className="bg-amber-500 hover:bg-amber-600 text-white font-semibold text-sm h-9 px-5">
-              Schedule a Call
+              Let's Talk
             </Button>
           </a>
 
@@ -60,12 +85,13 @@ export default function Home() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t border-slate-200 py-4 px-4">
             <div className="flex flex-col gap-4">
-              <a href="#work" onClick={(e) => scrollToSection(e, 'work')} className="text-sm text-slate-600 hover:text-slate-900 transition-colors py-2">Work</a>
-              <a href="#services" onClick={(e) => scrollToSection(e, 'services')} className="text-sm text-slate-600 hover:text-slate-900 transition-colors py-2">Services</a>
-              <a href="#tampa" onClick={(e) => scrollToSection(e, 'tampa')} className="text-sm text-slate-600 hover:text-slate-900 transition-colors py-2">Tampa Bay</a>
+              <a href="#challenges" onClick={(e) => scrollToSection(e, 'challenges')} className="text-sm text-slate-600 hover:text-slate-900 transition-colors py-2">Challenges</a>
+              <a href="#capabilities" onClick={(e) => scrollToSection(e, 'capabilities')} className="text-sm text-slate-600 hover:text-slate-900 transition-colors py-2">Capabilities</a>
+              <a href="#results" onClick={(e) => scrollToSection(e, 'results')} className="text-sm text-slate-600 hover:text-slate-900 transition-colors py-2">Results</a>
+              <a href="#work-together" onClick={(e) => scrollToSection(e, 'work-together')} className="text-sm text-slate-600 hover:text-slate-900 transition-colors py-2">Work Together</a>
               <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>
                 <Button className="bg-amber-500 hover:bg-amber-600 text-white font-semibold text-sm h-10 w-full mt-2">
-                  Schedule a Call
+                  Let's Talk
                 </Button>
               </a>
             </div>
@@ -79,26 +105,30 @@ export default function Home() {
           {/* Status Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-50 border border-emerald-200 rounded-full mb-6">
             <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-            <span className="text-emerald-700 text-xs font-semibold uppercase tracking-wide">Available Now</span>
+            <span className="text-emerald-700 text-xs font-semibold uppercase tracking-wide">Available for Opportunities</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight text-slate-900 mb-6">
-            Hardware visions →
+            Take your product from
             <br />
-            <span className="text-amber-500">fundable products</span>
+            <span className="text-amber-500">idea to market.</span>
           </h1>
           
-          <p className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl mb-8">
-            Industrial design + manufacturing expertise + startup speed. I bridge the gap that kills most hardware companies.
+          <p className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-3xl mb-6">
+            Whether you're launching something new, improving an existing product, or need to visualize a concept that wins investors—I help you move from where you are to where you need to be.
+          </p>
+
+          <p className="text-base text-slate-500 max-w-2xl mb-8">
+            Research → Design → Visualization → Production → Launch. One person who can do it all, or plug into your team wherever you need help.
           </p>
 
           {/* Quick proof */}
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-500 mb-8">
-            <span>Virginia Tech ID</span>
+            <span className="font-medium">12+ years product development</span>
             <span>•</span>
-            <span>BANQloop → $4M raised</span>
+            <span className="font-medium">500+ products delivered</span>
             <span>•</span>
-            <span>500+ deliverables</span>
+            <span className="font-medium">Concept to manufacturing</span>
           </div>
 
           {/* CTAs */}
@@ -106,19 +136,14 @@ export default function Home() {
             <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>
               <Button className="bg-amber-500 hover:bg-amber-600 text-white px-6 h-12 text-sm font-bold gap-2">
                 <MessageCircle className="w-4 h-4" />
-                Schedule a Call
+                Let's Talk
                 <ArrowRight className="w-4 h-4" />
-              </Button>
-            </a>
-            <a href="#work" onClick={(e) => scrollToSection(e, 'work')}>
-              <Button variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-100 px-5 h-12 text-sm font-semibold gap-2">
-                View Work
               </Button>
             </a>
             <a href="/Martin-Veldsman-Resume.pdf" download>
               <Button variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-100 px-5 h-12 text-sm font-semibold gap-2">
                 <Download className="w-4 h-4" />
-                Resume
+                Download Resume
               </Button>
             </a>
           </div>
@@ -138,82 +163,141 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ==================== THE PROBLEM ==================== */}
-      <section className="py-20 px-4 bg-slate-900 text-white">
-        <div className="container max-w-5xl">
-          <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-4">The Problem</p>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Designers make unbuildable things.
-            <br />
-            <span className="text-amber-400">Engineers kill the magic.</span>
+      {/* ==================== COMMON CHALLENGES ==================== */}
+      <section id="challenges" className="py-20 px-4 bg-slate-50 scroll-mt-20">
+        <div className="container max-w-6xl">
+          <p className="text-amber-500 text-sm font-semibold uppercase tracking-wider mb-4">Common Challenges</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+            Product development is hard.
           </h2>
-          <p className="text-slate-400 text-lg mb-12 max-w-2xl">
-            I speak both languages fluently. Design intent stays intact. Manufacturing works from day one.
+          <p className="text-lg text-slate-600 mb-12 max-w-2xl">
+            Here's where teams usually get stuck.
           </p>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div>
-              <p className="text-3xl sm:text-4xl font-bold text-white mb-1">20-40%</p>
-              <p className="text-slate-400 text-sm">Cost reduction via DFM</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-xl border border-slate-200">
+              <h3 className="text-lg font-bold text-slate-900 mb-3">"We have an idea but don't know where to start"</h3>
+              <p className="text-slate-600">You need someone to turn a rough concept into something concrete—research, strategy, and a clear path forward.</p>
             </div>
-            <div>
-              <p className="text-3xl sm:text-4xl font-bold text-white mb-1">10x</p>
-              <p className="text-slate-400 text-sm">Faster design cycles</p>
+
+            <div className="bg-white p-6 rounded-xl border border-slate-200">
+              <h3 className="text-lg font-bold text-slate-900 mb-3">"We need visuals that sell"</h3>
+              <p className="text-slate-600">Investors, customers, or stakeholders need to see it to believe it. You need renderings, animations, or pitch materials that convince.</p>
             </div>
-            <div>
-              <p className="text-3xl sm:text-4xl font-bold text-white mb-1">$4M</p>
-              <p className="text-slate-400 text-sm">Helped raise at BANQloop</p>
+
+            <div className="bg-white p-6 rounded-xl border border-slate-200">
+              <h3 className="text-lg font-bold text-slate-900 mb-3">"Design and manufacturing don't talk"</h3>
+              <p className="text-slate-600">Beautiful concepts that can't be built. Buildable products that lost their soul. You need someone who thinks in both languages.</p>
             </div>
-            <div>
-              <p className="text-3xl sm:text-4xl font-bold text-white mb-1">500+</p>
-              <p className="text-slate-400 text-sm">Production deliverables</p>
+
+            <div className="bg-white p-6 rounded-xl border border-slate-200">
+              <h3 className="text-lg font-bold text-slate-900 mb-3">"We're moving too slow"</h3>
+              <p className="text-slate-600">Revisions drag on. Timelines slip. You need faster iteration without sacrificing quality.</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl border border-slate-200">
+              <h3 className="text-lg font-bold text-slate-900 mb-3">"Our costs are out of control"</h3>
+              <p className="text-slate-600">The design looks great but costs too much to produce. You need DFM optimization and cost engineering from the start.</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl border border-slate-200">
+              <h3 className="text-lg font-bold text-slate-900 mb-3">"We don't know how to launch"</h3>
+              <p className="text-slate-600">Product's ready but you need packaging, user guides, sell sheets, or a presales website to actually go to market.</p>
             </div>
           </div>
+
+          <p className="text-center text-slate-600 mt-10 text-lg">
+            The common thread? <span className="font-semibold text-slate-900">You need someone who can see the whole picture</span>—not just one piece of the puzzle.
+          </p>
         </div>
       </section>
 
-      {/* ==================== SELECTED WORK ==================== */}
-      <section id="work" className="py-20 px-4 scroll-mt-20">
+      {/* ==================== WHAT I BRING ==================== */}
+      <section id="capabilities" className="py-20 px-4 scroll-mt-20">
         <div className="container max-w-6xl">
-          <p className="text-amber-500 text-sm font-semibold uppercase tracking-wider mb-4">Selected Work</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-12">
-            From sketch to funded
+          <p className="text-amber-500 text-sm font-semibold uppercase tracking-wider mb-4">What I Bring to the Table</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+            End-to-end product development capabilities.
+          </h2>
+          <p className="text-lg text-slate-600 mb-12 max-w-3xl">
+            I can take you from initial research through market launch—or plug in wherever your team needs support.
+          </p>
+
+          {/* Capability Tabs */}
+          <div className="flex flex-wrap gap-2 mb-8">
+            {Object.entries(capabilities).map(([key, cap]) => (
+              <button
+                key={key}
+                onClick={() => setActiveCapability(key)}
+                className={`px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
+                  activeCapability === key
+                    ? 'bg-amber-500 text-white'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                }`}
+              >
+                {cap.title}
+              </button>
+            ))}
+          </div>
+
+          {/* Active Capability Content */}
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            <div className="bg-slate-50 p-8 rounded-2xl">
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">{capabilities[activeCapability as keyof typeof capabilities].title}</h3>
+              <ul className="space-y-3">
+                {capabilities[activeCapability as keyof typeof capabilities].items.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-slate-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-xl overflow-hidden">
+              <img 
+                src={
+                  activeCapability === 'research' ? '/images/capability-research-strategy.webp' :
+                  activeCapability === 'design' ? '/images/design-process.jpg' :
+                  activeCapability === 'visualization' ? '/images/cap-visualization.jpg' :
+                  activeCapability === 'production' ? '/images/cap-production.jpg' :
+                  '/images/cap-go-to-market.jpg'
+                }
+                alt={capabilities[activeCapability as keyof typeof capabilities].title}
+                className="w-full h-64 sm:h-80 object-cover"
+              />
+            </div>
+          </div>
+
+          <p className="mt-10 text-slate-600 text-lg bg-amber-50 p-6 rounded-xl border border-amber-200">
+            <span className="font-semibold text-slate-900">The difference:</span> Most teams hire separate researchers, designers, CAD engineers, visualization specialists, and manufacturing consultants. I can do all of it—or work alongside your existing team wherever you need the help.
+          </p>
+        </div>
+      </section>
+
+      {/* ==================== TRACK RECORD ==================== */}
+      <section id="results" className="py-20 px-4 bg-slate-900 text-white scroll-mt-20">
+        <div className="container max-w-6xl">
+          <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider mb-4">Track Record</p>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-12">
+            This approach delivers results.
           </h2>
 
           {/* BANQloop */}
           <div className="mb-16">
             <div className="grid md:grid-cols-2 gap-8 mb-6">
-              <div className="rounded-xl overflow-hidden bg-slate-100">
+              <div className="rounded-xl overflow-hidden">
                 <img 
                   src="/images/banqloop-kiosk.jpg" 
                   alt="BANQloop AI recycling kiosk render" 
                   className="w-full h-64 sm:h-80 object-cover"
                 />
               </div>
-              <div className="rounded-xl overflow-hidden bg-slate-100">
-                <img 
-                  src="/images/design-process.jpg" 
-                  alt="BANQloop exploded engineering view" 
-                  className="w-full h-64 sm:h-80 object-cover"
-                />
-              </div>
-            </div>
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-              <div>
-                <p className="text-amber-500 font-semibold mb-1">BANQloop</p>
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">AI recycling kiosks → $4M seed</h3>
-                <p className="text-slate-600 max-w-xl">Led industrial design from concept to investor-ready. Created production-optimized designs with detailed engineering documentation and technical feasibility. The visual materials helped secure seed funding.</p>
-              </div>
-              <div className="flex gap-8 text-sm">
-                <div>
-                  <p className="text-slate-400 uppercase tracking-wide text-xs mb-1">Timeline</p>
-                  <p className="font-semibold text-slate-900">6 weeks</p>
-                </div>
-                <div>
-                  <p className="text-slate-400 uppercase tracking-wide text-xs mb-1">Outcome</p>
-                  <p className="font-semibold text-slate-900">~$4M seed round</p>
-                </div>
+              <div className="flex flex-col justify-center">
+                <p className="text-amber-400 font-semibold text-sm uppercase tracking-wider mb-2">~$4M Raised</p>
+                <h3 className="text-2xl font-bold text-white mb-4">BANQloop</h3>
+                <p className="text-slate-400 mb-4">AI recycling kiosks. Took rough concept to investor-ready product—design, visualization, and manufacturing strategy that proved technical feasibility.</p>
+                <p className="text-amber-400 font-semibold">Concept → Funded in 6 weeks</p>
               </div>
             </div>
           </div>
@@ -221,73 +305,37 @@ export default function Home() {
           {/* Design Conquest */}
           <div className="mb-16">
             <div className="grid md:grid-cols-2 gap-8 mb-6">
-              <div className="rounded-xl overflow-hidden bg-slate-100">
+              <div className="flex flex-col justify-center order-2 md:order-1">
+                <p className="text-amber-400 font-semibold text-sm uppercase tracking-wider mb-2">500+ Deliverables</p>
+                <h3 className="text-2xl font-bold text-white mb-4">Design Conquest</h3>
+                <p className="text-slate-400 mb-4">Built a design-to-manufacturing service for DTCs and OEMs. Research, design, visualization, production docs—the full pipeline.</p>
+                <p className="text-amber-400 font-semibold">Avg 72-hour turnaround</p>
+              </div>
+              <div className="rounded-xl overflow-hidden order-1 md:order-2">
                 <img 
                   src="/images/speaker-before-after.webp" 
                   alt="Before and after: sketch to photorealistic render" 
                   className="w-full h-64 sm:h-80 object-cover"
                 />
               </div>
-              <div className="rounded-xl overflow-hidden bg-slate-100">
-                <img 
-                  src="/images/workspace-flatlay.webp" 
-                  alt="Design workspace with materials and tools" 
-                  className="w-full h-64 sm:h-80 object-cover"
-                />
-              </div>
-            </div>
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-              <div>
-                <p className="text-amber-500 font-semibold mb-1">Design Conquest</p>
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">Scalable design-to-factory service</h3>
-                <p className="text-slate-600 max-w-xl">Built a complete design-to-factory pipeline. Not just renderings—production-ready CAD, technical docs, and supplier-ready files. 500+ deliverables across dozens of clients.</p>
-              </div>
-              <div className="flex gap-8 text-sm">
-                <div>
-                  <p className="text-slate-400 uppercase tracking-wide text-xs mb-1">Scale</p>
-                  <p className="font-semibold text-slate-900">500+ deliverables</p>
-                </div>
-                <div>
-                  <p className="text-slate-400 uppercase tracking-wide text-xs mb-1">Speed</p>
-                  <p className="font-semibold text-slate-900">Days, not weeks</p>
-                </div>
-              </div>
             </div>
           </div>
 
-          {/* Velocity Sprints */}
+          {/* Startup Sprints */}
           <div>
             <div className="grid md:grid-cols-2 gap-8 mb-6">
-              <div className="rounded-xl overflow-hidden bg-slate-100">
+              <div className="rounded-xl overflow-hidden">
                 <img 
                   src="/images/product-portfolio.jpg" 
                   alt="Product design variations grid" 
                   className="w-full h-64 sm:h-80 object-cover"
                 />
               </div>
-              <div className="rounded-xl overflow-hidden bg-slate-100 p-8 flex items-center justify-center">
-                <div className="text-center">
-                  <p className="text-6xl font-bold text-amber-500 mb-2">10x</p>
-                  <p className="text-slate-600 font-medium">Faster than traditional process</p>
-                  <p className="text-slate-400 text-sm mt-2">15 directions in 24 hours</p>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-              <div>
-                <p className="text-amber-500 font-semibold mb-1">Velocity Sprints</p>
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">Accelerated design exploration</h3>
-                <p className="text-slate-600 max-w-xl">Rapid concept development for startups who need to move fast. AI-assisted workflows deliver investor-ready renderings in hours, not weeks. Manufacturing strategy before expensive commitments.</p>
-              </div>
-              <div className="flex gap-8 text-sm">
-                <div>
-                  <p className="text-slate-400 uppercase tracking-wide text-xs mb-1">Deliverable</p>
-                  <p className="font-semibold text-slate-900">15+ directions</p>
-                </div>
-                <div>
-                  <p className="text-slate-400 uppercase tracking-wide text-xs mb-1">Timeline</p>
-                  <p className="font-semibold text-slate-900">24-48 hours</p>
-                </div>
+              <div className="flex flex-col justify-center">
+                <p className="text-amber-400 font-semibold text-sm uppercase tracking-wider mb-2">10x Faster</p>
+                <h3 className="text-2xl font-bold text-white mb-4">Startup Sprints</h3>
+                <p className="text-slate-400 mb-4">Rapid 0→1 product development for early-stage founders. AI-accelerated workflows compress months into weeks.</p>
+                <p className="text-amber-400 font-semibold">3-6 months → 1-2 weeks</p>
               </div>
             </div>
           </div>
@@ -297,44 +345,36 @@ export default function Home() {
       {/* ==================== TESTIMONIALS ==================== */}
       <section className="py-20 px-4 bg-slate-50">
         <div className="container max-w-6xl">
-          <p className="text-amber-500 text-sm font-semibold uppercase tracking-wider mb-4">What Clients Say</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-12">
-            Trusted by founders
-          </h2>
-
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-xl border border-slate-200">
               <Quote className="w-10 h-10 text-amber-400 mb-4" />
-              <p className="text-slate-700 mb-6">"Martin's designs were critical to our seed round. He understood both the vision and the manufacturing constraints—rare combination."</p>
+              <p className="text-slate-700 mb-6">"Martin delivered product designs for us that have clear advantages over anything on the market."</p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-600 font-semibold text-sm">JC</div>
+                <div className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-600 font-semibold text-sm">DC</div>
                 <div>
-                  <p className="font-semibold text-slate-900 text-sm">Jennifer Chen</p>
-                  <p className="text-slate-500 text-xs">CEO, FlowTech Systems</p>
+                  <p className="font-semibold text-slate-900 text-sm">Design Conquest Client</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-white p-8 rounded-xl border border-slate-200">
               <Quote className="w-10 h-10 text-amber-400 mb-4" />
-              <p className="text-slate-700 mb-6">"Saved us 6 months and $200K by catching DFM issues before tooling. His manufacturing knowledge is unmatched."</p>
+              <p className="text-slate-700 mb-6">"His ability to bridge design vision with manufacturing reality saved us months of back-and-forth."</p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-600 font-semibold text-sm">RP</div>
+                <div className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-600 font-semibold text-sm">HW</div>
                 <div>
-                  <p className="font-semibold text-slate-900 text-sm">Robert Park</p>
-                  <p className="text-slate-500 text-xs">Founder, Apex Innovations</p>
+                  <p className="font-semibold text-slate-900 text-sm">Hardware Startup Founder</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-white p-8 rounded-xl border border-slate-200">
               <Quote className="w-10 h-10 text-amber-400 mb-4" />
-              <p className="text-slate-700 mb-6">"Fast, professional, and understood our startup constraints. Delivered investor-ready renderings in 3 days."</p>
+              <p className="text-slate-700 mb-6">"Fast, professional, and understood our startup constraints. Delivered investor-ready renderings in days."</p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-600 font-semibold text-sm">SM</div>
+                <div className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-600 font-semibold text-sm">SF</div>
                 <div>
-                  <p className="font-semibold text-slate-900 text-sm">Sarah Martinez</p>
-                  <p className="text-slate-500 text-xs">CTO, NexGen Hardware</p>
+                  <p className="font-semibold text-slate-900 text-sm">Seed-Stage Founder</p>
                 </div>
               </div>
             </div>
@@ -342,136 +382,73 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ==================== TWO WAYS TO WORK ==================== */}
-      <section id="services" className="py-20 px-4 scroll-mt-20">
+      {/* ==================== WORK TOGETHER ==================== */}
+      <section id="work-together" className="py-20 px-4 scroll-mt-20">
         <div className="container max-w-6xl">
-          <p className="text-amber-500 text-sm font-semibold uppercase tracking-wider mb-4">Two Ways to Work</p>
+          <p className="text-amber-500 text-sm font-semibold uppercase tracking-wider mb-4">Work Together</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-12">
-            Full-time or project-based
+            Two ways to engage.
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Full-Time */}
             <div className="p-8 bg-white border-2 border-amber-500 rounded-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 border border-emerald-200 rounded-full mb-4">
-                <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
-                <span className="text-emerald-700 text-xs font-semibold uppercase">Available Now</span>
-              </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Full-Time Role</h3>
-              <ul className="space-y-3 mb-6">
+              <p className="text-amber-500 font-semibold text-sm uppercase tracking-wider mb-2">Full-Time / Embedded</p>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Join your team</h3>
+              <p className="text-slate-600 mb-6">Looking for the right fit—a team building products that matter, where design thinking and manufacturing reality both have a seat at the table.</p>
+              <ul className="space-y-3 mb-8">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-600">Embedded design + manufacturing expertise</span>
+                  <span className="text-slate-700">Day 1 contribution across the product pipeline</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-600">Week 1: DFM audit, quick wins identified</span>
+                  <span className="text-slate-700">Bridge between design, engineering, and business</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-600">Month 1: Process improvements, cost reductions</span>
+                  <span className="text-slate-700">AI-accelerated workflows (10-15 directions/day)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-600">Ongoing: Design leadership, team mentorship</span>
+                  <span className="text-slate-700">Catch costly manufacturing mistakes early</span>
                 </li>
               </ul>
               <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>
                 <Button className="w-full bg-amber-500 hover:bg-amber-600 text-white h-12 font-semibold">
-                  Schedule Interview
+                  Let's Talk About Fit
                 </Button>
               </a>
             </div>
 
-            {/* Project Sprint */}
+            {/* Contract */}
             <div className="p-8 bg-white border border-slate-200 rounded-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 border border-slate-200 rounded-full mb-4">
-                <span className="text-slate-600 text-xs font-semibold uppercase">Starting 1-2 Weeks</span>
-              </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Project Sprint</h3>
-              <ul className="space-y-3 mb-6">
+              <p className="text-slate-500 font-semibold text-sm uppercase tracking-wider mb-2">Contract / Project</p>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Solve a specific challenge</h3>
+              <p className="text-slate-600 mb-6">Have a project that needs expertise? I can plug in wherever you need help—from quick concept sprints to full product development.</p>
+              <ul className="space-y-3 mb-8">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-600">Concept Sprint: 1-2 weeks, investor-ready</span>
+                  <span className="text-slate-700">Concept Sprint: Idea → renderings + strategy (1-2 weeks)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-600">Design to Factory: 4-8 weeks, full CAD</span>
+                  <span className="text-slate-700">Design-to-Factory: Full CAD through production docs</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-600">Manufacturing Support: Ongoing advisory</span>
+                  <span className="text-slate-700">Visualization: Renderings, animations, pitch materials</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-600">Fixed scope, clear deliverables, fast turnaround</span>
+                  <span className="text-slate-700">Launch Support: Packaging, guides, presales pages</span>
                 </li>
               </ul>
               <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>
                 <Button variant="outline" className="w-full border-slate-300 text-slate-700 hover:bg-slate-100 h-12 font-semibold">
-                  Discuss Project
+                  Discuss Your Project
                 </Button>
               </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ==================== CAPABILITIES ==================== */}
-      <section className="py-20 px-4 bg-slate-50">
-        <div className="container max-w-6xl">
-          <p className="text-amber-500 text-sm font-semibold uppercase tracking-wider mb-4">Capabilities</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-12">
-            End-to-end expertise
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="group">
-              <div className="rounded-xl overflow-hidden mb-4">
-                <img 
-                  src="/images/capability-research-strategy.webp" 
-                  alt="Research and strategy workspace" 
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Research & Strategy</h3>
-              <p className="text-slate-600">Market research, user insights, competitive analysis, and product strategy</p>
-            </div>
-
-            <div className="group">
-              <div className="rounded-xl overflow-hidden mb-4">
-                <img 
-                  src="/images/capability-visualization.webp" 
-                  alt="Visualization and rendering workspace" 
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Visualization</h3>
-              <p className="text-slate-600">Photorealistic renderings, animations, pitch materials, and investor presentations</p>
-            </div>
-
-            <div className="group">
-              <div className="rounded-xl overflow-hidden mb-4">
-                <img 
-                  src="/images/capability-production.webp" 
-                  alt="Production and manufacturing facility" 
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Production</h3>
-              <p className="text-slate-600">DFM optimization, supplier coordination, quality control, and cost optimization</p>
-            </div>
-
-            <div className="group">
-              <div className="rounded-xl overflow-hidden mb-4">
-                <img 
-                  src="/images/capability-go-to-market.webp" 
-                  alt="Go-to-market materials and packaging" 
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Go-to-Market</h3>
-              <p className="text-slate-600">Marketing materials, user guides, packaging design, and go-to-market strategy</p>
             </div>
           </div>
         </div>
@@ -482,82 +459,87 @@ export default function Home() {
         <div className="container max-w-5xl">
           <div className="flex items-center gap-2 mb-4">
             <MapPin className="w-5 h-5 text-amber-400" />
-            <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider">Tampa Bay Area</p>
+            <p className="text-amber-400 text-sm font-semibold uppercase tracking-wider">Tampa Bay</p>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            New to the area.
-            <br />
-            <span className="text-amber-400">Ready to contribute.</span>
+            New to the area. Looking to connect.
           </h2>
-          <p className="text-slate-400 text-lg mb-8 max-w-2xl">
-            Recently relocated to Pinellas Park. Looking to connect with Tampa Bay's innovation community—startups, manufacturers, accelerators. Let's grab coffee and talk product.
+          <p className="text-slate-400 text-lg mb-6 max-w-2xl">
+            Just moved to Tampa Bay. Impressed by the innovation ecosystem—spARK Labs, Tampa Bay Wave, St. Pete Innovation District. Actively seeking full-time roles, contract work, and ways to contribute to the community.
           </p>
 
-          <div className="flex flex-wrap gap-4">
-            <a href="mailto:martin@designconquest.com?subject=Coffee%20Chat%20-%20Tampa%20Bay">
-              <Button className="bg-amber-500 hover:bg-amber-600 text-white px-6 h-12 font-semibold gap-2">
-                <Coffee className="w-4 h-4" />
-                Schedule a Coffee Chat
-              </Button>
-            </a>
-            <a href="https://www.linkedin.com/in/martinveldsman/" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" className="border-slate-600 text-slate-300 hover:bg-slate-800 px-6 h-12 font-semibold gap-2">
-                <Linkedin className="w-4 h-4" />
-                Connect on LinkedIn
-              </Button>
-            </a>
+          <div className="bg-slate-800 p-6 rounded-xl mb-8">
+            <p className="text-amber-400 font-semibold mb-2">Free strategy session for Tampa Bay startups</p>
+            <p className="text-slate-400">If you're affiliated with a local accelerator or innovation hub, let's grab coffee and talk through your product challenges. No pitch, no strings—just trying to be helpful.</p>
           </div>
+
+          <a href="mailto:martin@designconquest.com?subject=Coffee%20Chat%20-%20Tampa%20Bay">
+            <Button className="bg-amber-500 hover:bg-amber-600 text-white px-6 h-12 font-semibold gap-2">
+              <Coffee className="w-4 h-4" />
+              Schedule a Coffee Chat
+            </Button>
+          </a>
         </div>
       </section>
 
       {/* ==================== CONTACT ==================== */}
       <section id="contact" className="py-20 px-4 scroll-mt-20">
-        <div className="container max-w-6xl">
-          <p className="text-amber-500 text-sm font-semibold uppercase tracking-wider mb-4">Let's Talk</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-12">
-            Ready to start?
+        <div className="container max-w-5xl">
+          <p className="text-amber-500 text-sm font-semibold uppercase tracking-wider mb-4">Let's figure out if I can help.</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
+            Whether you're hiring, have a project, or just want to talk about product development—I'm happy to chat.
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Hiring */}
-            <div className="p-8 bg-amber-50 border border-amber-200 rounded-2xl">
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Hiring for a full-time role?</h3>
-              <p className="text-slate-600 mb-6">Let's discuss how I can contribute to your team's product development capabilities.</p>
-              <a href="mailto:martin@designconquest.com?subject=Full-Time%20Opportunity">
-                <Button className="w-full bg-amber-500 hover:bg-amber-600 text-white h-12 font-semibold">
-                  Schedule Interview
-                </Button>
-              </a>
+          <div className="grid md:grid-cols-2 gap-12 mt-12">
+            <div>
+              <h3 className="text-xl font-bold text-slate-900 mb-4">Martin Veldsman</h3>
+              <p className="text-slate-600 mb-6">Product Designer & Manufacturing Strategist</p>
+              
+              <div className="space-y-4">
+                <a href="mailto:martin@designconquest.com" className="flex items-center gap-3 text-slate-700 hover:text-amber-500 transition-colors">
+                  <Mail className="w-5 h-5" />
+                  <span>martin@designconquest.com</span>
+                </a>
+                <a href="tel:+15408192005" className="flex items-center gap-3 text-slate-700 hover:text-amber-500 transition-colors">
+                  <Phone className="w-5 h-5" />
+                  <span>(540) 819-2005</span>
+                </a>
+                <a href="https://www.linkedin.com/in/martinveldsman/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-slate-700 hover:text-amber-500 transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                  <span>LinkedIn</span>
+                </a>
+                <div className="flex items-center gap-3 text-slate-700">
+                  <MapPin className="w-5 h-5" />
+                  <span>Tampa Bay, FL</span>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-4 mt-8">
+                <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>
+                  <Button className="bg-amber-500 hover:bg-amber-600 text-white px-6 h-12 font-semibold">
+                    Let's Talk
+                  </Button>
+                </a>
+                <a href="/Martin-Veldsman-Resume.pdf" download>
+                  <Button variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-100 px-6 h-12 font-semibold gap-2">
+                    <Download className="w-4 h-4" />
+                    Download Resume
+                  </Button>
+                </a>
+                <a href="https://designconquest.webflow.io" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-100 px-6 h-12 font-semibold gap-2">
+                    View Design Conquest
+                    <ExternalLink className="w-4 h-4" />
+                  </Button>
+                </a>
+              </div>
             </div>
 
-            {/* Project */}
-            <div className="p-8 bg-white border border-slate-200 rounded-2xl">
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Have a project in mind?</h3>
-              <p className="text-slate-600 mb-6">From concept sprints to full design-to-factory, let's scope your project.</p>
-              <a href="mailto:martin@designconquest.com?subject=Project%20Inquiry">
-                <Button variant="outline" className="w-full border-slate-300 text-slate-700 hover:bg-slate-100 h-12 font-semibold">
-                  Discuss Project
-                </Button>
-              </a>
-            </div>
-          </div>
-
-          {/* Direct Contact */}
-          <div className="mt-12 pt-8 border-t border-slate-200">
-            <p className="text-slate-500 text-sm mb-4">Or reach out directly:</p>
-            <div className="flex flex-wrap gap-6">
-              <a href="mailto:martin@designconquest.com" className="flex items-center gap-2 text-slate-700 hover:text-amber-500 transition-colors">
-                <Mail className="w-4 h-4" />
-                <span className="text-sm">martin@designconquest.com</span>
-              </a>
-              <a href="tel:+17274001928" className="flex items-center gap-2 text-slate-700 hover:text-amber-500 transition-colors">
-                <Phone className="w-4 h-4" />
-                <span className="text-sm">(727) 400-1928</span>
-              </a>
-              <a href="https://www.linkedin.com/in/martinveldsman/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-700 hover:text-amber-500 transition-colors">
-                <Linkedin className="w-4 h-4" />
-                <span className="text-sm">LinkedIn</span>
-              </a>
+            <div className="bg-slate-50 p-8 rounded-2xl">
+              <p className="text-slate-700 text-lg leading-relaxed mb-6">
+                Building something interesting? I'd love to hear about it—even if you're not ready to hire or don't have budget for a project yet.
+              </p>
+              <p className="text-slate-900 font-semibold">— Martin</p>
             </div>
           </div>
         </div>
@@ -585,7 +567,7 @@ export default function Home() {
           </div>
           
           <div className="mt-8 pt-8 border-t border-slate-800 text-center">
-            <p className="text-slate-500 text-sm">© 2025 Martin Veldsman. Tampa Bay, Florida.</p>
+            <p className="text-slate-500 text-sm">© 2025 Martin Veldsman</p>
           </div>
         </div>
       </footer>
