@@ -140,9 +140,9 @@ export default function Home() {
 
           {/* Hero Title - Blended approach: aspiration + differentiation */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-[1.05] tracking-tight text-slate-900 mb-6 lg:mb-8">
-            Take your product from idea to market.
+            Go from product idea to market.
             <br />
-            <span className="text-amber-500">Without the expensive mistakes.</span>
+            <span className="text-amber-500">Without the costly headaches.</span>
           </h1>
           
           {/* Target audience qualifier */}
@@ -549,7 +549,7 @@ export default function Home() {
             {/* Full-Time - larger card */}
             <div className="p-8 lg:p-10 xl:p-12 bg-white border-2 border-amber-500 rounded-2xl lg:rounded-3xl shadow-lg shadow-amber-500/10 hover:shadow-amber-500/20 transition-shadow duration-300">
               <p className="text-amber-500 font-semibold text-sm lg:text-base uppercase tracking-wider mb-2 lg:mb-3">Full-Time / Embedded</p>
-              <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-3 lg:mb-4">Join your team</h3>
+              <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-3 lg:mb-4">I'll join your team</h3>
               <p className="text-slate-500 text-sm lg:text-base mb-4 lg:mb-5">Ideal for: Companies building physical products who need ongoing design & manufacturing expertise</p>
               <p className="text-slate-600 text-base lg:text-lg xl:text-xl mb-6 lg:mb-8">Looking for the right fit—a team building products that matter, where design thinking and manufacturing reality both have a seat at the table.</p>
               <ul className="space-y-4 lg:space-y-5 mb-8 lg:mb-10">
@@ -580,7 +580,7 @@ export default function Home() {
             {/* Contract - larger card */}
             <div className="p-8 lg:p-10 xl:p-12 bg-white border border-slate-200 rounded-2xl lg:rounded-3xl hover:border-slate-300 hover:shadow-xl transition-all duration-300">
               <p className="text-slate-500 font-semibold text-sm lg:text-base uppercase tracking-wider mb-2 lg:mb-3">Contract / Project</p>
-              <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-3 lg:mb-4">Solve a specific challenge</h3>
+              <h3 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-slate-900 mb-3 lg:mb-4">I'll solve specific challenges</h3>
               <p className="text-slate-500 text-sm lg:text-base mb-4 lg:mb-5">Ideal for: Startups, founders, or teams with a specific project or milestone to hit</p>
               <p className="text-slate-600 text-base lg:text-lg xl:text-xl mb-6 lg:mb-8">Have a project that needs expertise? I can plug in wherever you need help—from quick concept sprints to full product development.</p>
               <ul className="space-y-4 lg:space-y-5 mb-8 lg:mb-10">
