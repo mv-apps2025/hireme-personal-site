@@ -140,9 +140,9 @@ export default function Home() {
 
           {/* Hero Title - Blended approach: aspiration + differentiation */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-[1.05] tracking-tight text-slate-900 mb-6 lg:mb-8">
-            Bring your product ideas to market
+            Bring your product ideas to life.
             <br />
-            <span className="text-amber-500">without the costly headaches.</span>
+            <span className="text-amber-500">Without the costly headaches.</span>
           </h1>
           
           {/* Target audience qualifier */}
