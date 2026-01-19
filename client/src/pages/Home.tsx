@@ -86,9 +86,10 @@ export default function Home() {
             <a href="#capabilities" onClick={(e) => scrollToSection(e, 'capabilities')} className="nav-link text-sm text-slate-600 hover:text-slate-900">Capabilities</a>
             <a href="#results" onClick={(e) => scrollToSection(e, 'results')} className="nav-link text-sm text-slate-600 hover:text-slate-900">Results</a>
             <a href="#work-together" onClick={(e) => scrollToSection(e, 'work-together')} className="nav-link text-sm text-slate-600 hover:text-slate-900">Work Together</a>
+            <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="nav-link text-sm text-slate-600 hover:text-slate-900">About</a>
           </div>
 
-          <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="hidden md:block">
+          <a href="https://calendly.com/mv-apps-proton/30min" target="_blank" rel="noopener noreferrer" className="hidden md:block">
             <Button className="cta-primary h-10 px-5 text-sm font-semibold rounded-lg">
               Get in Touch
             </Button>
@@ -111,7 +112,8 @@ export default function Home() {
               <a href="#capabilities" onClick={(e) => scrollToSection(e, 'capabilities')} className="text-sm text-slate-600 hover:text-slate-900 py-2">Capabilities</a>
               <a href="#results" onClick={(e) => scrollToSection(e, 'results')} className="text-sm text-slate-600 hover:text-slate-900 py-2">Results</a>
               <a href="#work-together" onClick={(e) => scrollToSection(e, 'work-together')} className="text-sm text-slate-600 hover:text-slate-900 py-2">Work Together</a>
-              <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>
+              <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="text-sm text-slate-600 hover:text-slate-900 py-2">About</a>
+              <a href="https://calendly.com/mv-apps-proton/30min" target="_blank" rel="noopener noreferrer">
                 <Button className="cta-primary w-full h-10 text-sm font-semibold mt-2 rounded-lg">
                   Get in Touch
                 </Button>
@@ -169,7 +171,7 @@ export default function Home() {
 
           {/* CTAs */}
           <div className="flex flex-wrap gap-4 mb-6">
-            <a href="mailto:martin@designconquest.com?subject=Let's%20Talk%20-%20Product%20Development">
+            <a href="https://calendly.com/mv-apps-proton/30min" target="_blank" rel="noopener noreferrer">
               <Button className="cta-primary h-12 px-6 text-base font-semibold gap-2 rounded-lg">
                 <MessageCircle className="w-4 h-4" />
                 Start a Conversation
@@ -540,7 +542,7 @@ export default function Home() {
                   <span className="text-slate-700 text-sm">Catch costly manufacturing mistakes early</span>
                 </li>
               </ul>
-              <a href="mailto:martin@designconquest.com?subject=Full-Time%20Opportunity">
+              <a href="https://calendly.com/mv-apps-proton/30min" target="_blank" rel="noopener noreferrer">
                 <Button className="cta-primary w-full h-12 text-base font-semibold rounded-lg">
                   Let's Talk About Fit
                 </Button>
@@ -571,7 +573,7 @@ export default function Home() {
                   <span className="text-slate-700 text-sm">Launch Support: Packaging, guides, presales pages</span>
                 </li>
               </ul>
-              <a href="mailto:martin@designconquest.com?subject=Project%20Inquiry">
+              <a href="https://calendly.com/mv-apps-proton/30min" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" className="cta-secondary w-full h-12 text-base font-semibold rounded-lg">
                   Discuss Your Project
                 </Button>
@@ -616,7 +618,7 @@ export default function Home() {
             <p className="text-slate-700">If you're building a physical product or need help thinking through design-to-manufacturing challenges, let's connect. First coffee is on me.</p>
           </div>
 
-          <a href="mailto:martin@designconquest.com?subject=Coffee%20Chat%20-%20Tampa%20Bay">
+          <a href="https://calendly.com/mv-apps-proton/30min" target="_blank" rel="noopener noreferrer">
             <Button className="cta-primary h-12 px-6 text-base font-semibold gap-2 rounded-lg">
               <Coffee className="w-4 h-4" />
               Let's Grab Coffee
@@ -667,10 +669,10 @@ export default function Home() {
               </div>
 
               <div className="flex flex-wrap gap-4 mt-10">
-                <a href="mailto:martin@designconquest.com?subject=Let's%20Connect">
+                <a href="https://calendly.com/mv-apps-proton/30min" target="_blank" rel="noopener noreferrer">
                   <Button className="cta-primary h-12 px-6 text-base font-semibold gap-2 rounded-lg">
                     <Send className="w-4 h-4" />
-                    Send a Message
+                    Schedule a Call
                   </Button>
                 </a>
                 <a href="/Martin-Veldsman-Resume.pdf" download>
