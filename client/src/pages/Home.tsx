@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download, MessageCircle, CheckCircle2, Mail, Phone, Linkedin, MapPin, Coffee, PenTool, Menu, X, ExternalLink, Send, Lightbulb, Image, GitMerge, Zap, DollarSign, Rocket } from "lucide-react";
 import { useState, useEffect } from "react";
+import { trackCalendlyClick, trackResumeDownload, trackExternalLink } from "@/lib/analytics";
 
 /**
  * DISCIPLINED VERSION - Professional quality through restraint
@@ -89,7 +90,7 @@ export default function Home() {
             <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="nav-link text-sm text-slate-600 hover:text-slate-900">About</a>
           </div>
 
-          <a href="https://calendly.com/mv-apps-proton/30min" target="_blank" rel="noopener noreferrer" className="hidden md:block">
+          <a href="https://calendly.com/mv-apps-proton/30min" target="_blank" rel="noopener noreferrer" className="hidden md:block" onClick={() => trackCalendlyClick('navigation')}>
             <Button className="cta-primary h-10 px-5 text-sm font-semibold rounded-lg">
               Get in Touch
             </Button>
@@ -113,7 +114,7 @@ export default function Home() {
               <a href="#results" onClick={(e) => scrollToSection(e, 'results')} className="text-sm text-slate-600 hover:text-slate-900 py-2">Results</a>
               <a href="#work-together" onClick={(e) => scrollToSection(e, 'work-together')} className="text-sm text-slate-600 hover:text-slate-900 py-2">Work Together</a>
               <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="text-sm text-slate-600 hover:text-slate-900 py-2">About</a>
-              <a href="https://calendly.com/mv-apps-proton/30min" target="_blank" rel="noopener noreferrer">
+              <a href="https://calendly.com/mv-apps-proton/30min" target="_blank" rel="noopener noreferrer" onClick={() => trackCalendlyClick('mobile_menu')}>
                 <Button className="cta-primary w-full h-10 text-sm font-semibold mt-2 rounded-lg">
                   Get in Touch
                 </Button>
@@ -171,7 +172,7 @@ export default function Home() {
 
           {/* CTAs */}
           <div className="flex flex-wrap gap-4 mb-6">
-            <a href="https://calendly.com/mv-apps-proton/30min" target="_blank" rel="noopener noreferrer">
+            <a href="https://calendly.com/mv-apps-proton/30min" target="_blank" rel="noopener noreferrer" onClick={() => trackCalendlyClick('hero')}>
               <Button className="cta-primary h-12 px-6 text-base font-semibold gap-2 rounded-lg">
                 <MessageCircle className="w-4 h-4" />
                 Start a Conversation
@@ -542,7 +543,7 @@ export default function Home() {
                   <span className="text-slate-700 text-sm">Catch costly manufacturing mistakes early</span>
                 </li>
               </ul>
-              <a href="https://calendly.com/mv-apps-proton/30min" target="_blank" rel="noopener noreferrer">
+              <a href="https://calendly.com/mv-apps-proton/30min" target="_blank" rel="noopener noreferrer" onClick={() => trackCalendlyClick('work_together_fulltime')}>
                 <Button className="cta-primary w-full h-12 text-base font-semibold rounded-lg">
                   Let's Talk About Fit
                 </Button>
@@ -573,7 +574,7 @@ export default function Home() {
                   <span className="text-slate-700 text-sm">Launch Support: Packaging, guides, presales pages</span>
                 </li>
               </ul>
-              <a href="https://calendly.com/mv-apps-proton/30min" target="_blank" rel="noopener noreferrer">
+              <a href="https://calendly.com/mv-apps-proton/30min" target="_blank" rel="noopener noreferrer" onClick={() => trackCalendlyClick('work_together_contract')}>
                 <Button variant="outline" className="cta-secondary w-full h-12 text-base font-semibold rounded-lg">
                   Discuss Your Project
                 </Button>
@@ -618,7 +619,7 @@ export default function Home() {
             <p className="text-slate-700">If you're building a physical product or need help thinking through design-to-manufacturing challenges, let's connect. First coffee is on me.</p>
           </div>
 
-          <a href="https://calendly.com/mv-apps-proton/30min" target="_blank" rel="noopener noreferrer">
+          <a href="https://calendly.com/mv-apps-proton/30min" target="_blank" rel="noopener noreferrer" onClick={() => trackCalendlyClick('tampa_bay_coffee')}>
             <Button className="cta-primary h-12 px-6 text-base font-semibold gap-2 rounded-lg">
               <Coffee className="w-4 h-4" />
               Let's Grab Coffee
@@ -653,7 +654,7 @@ export default function Home() {
                   </div>
                   <span>(540) 819-2005</span>
                 </a>
-                <a href="https://www.linkedin.com/in/martinveldsman/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-slate-700 hover:text-slate-900">
+                <a href="https://www.linkedin.com/in/martinveldsman/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-slate-700 hover:text-slate-900" onClick={() => trackExternalLink('https://www.linkedin.com/in/martinveldsman/', 'linkedin')}>
                   <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center">
                     <Linkedin className="w-5 h-5 text-slate-500" />
                   </div>
@@ -669,13 +670,13 @@ export default function Home() {
               </div>
 
               <div className="flex flex-wrap gap-4 mt-10">
-                <a href="https://calendly.com/mv-apps-proton/30min" target="_blank" rel="noopener noreferrer">
+                <a href="https://calendly.com/mv-apps-proton/30min" target="_blank" rel="noopener noreferrer" onClick={() => trackCalendlyClick('contact_section')}>
                   <Button className="cta-primary h-12 px-6 text-base font-semibold gap-2 rounded-lg">
                     <Send className="w-4 h-4" />
                     Schedule a Call
                   </Button>
                 </a>
-                <a href="/Martin-Veldsman-Resume.pdf" download>
+                <a href="/Martin-Veldsman-Resume.pdf" download onClick={() => trackResumeDownload()}>
                   <Button variant="outline" className="cta-secondary h-12 px-6 text-base font-medium gap-2 rounded-lg">
                     <Download className="w-4 h-4" />
                     Download Resume
@@ -684,7 +685,7 @@ export default function Home() {
               </div>
 
               <div className="mt-6">
-                <a href="https://designconquest.webflow.io" target="_blank" rel="noopener noreferrer">
+                <a href="https://designconquest.webflow.io" target="_blank" rel="noopener noreferrer" onClick={() => trackExternalLink('https://designconquest.webflow.io', 'design_conquest')}>
                   <Button variant="outline" className="cta-secondary h-12 px-6 text-base font-medium gap-2 rounded-lg">
                     View Design Conquest
                     <ExternalLink className="w-4 h-4" />
